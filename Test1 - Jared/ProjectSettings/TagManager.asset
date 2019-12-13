@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Bullets
+  - Obstacle
+  - Slime
+  - Boar
+  - SlothBoss
+  - eyeDemon
+  - Lava
+  - FireBall
+  - Ice
+  - Bat
+  - Skellyboy
+  - Sound
+  - Boulder
+  - BoulderStop
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Player
+  - Obstacle
+  - Enemy
+  - Bullets
+  - Book
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Background decoration
+    uniqueID: 767309603
+    locked: 0
+  - name: Obstacles
+    uniqueID: 2825565459
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: foreground decoration
+    uniqueID: 2398652775
+    locked: 0
