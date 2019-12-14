@@ -25,8 +25,8 @@ public class PlayerInput : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.G))
         {
             //Testing Only Delete me
-            players.GetComponent<HealthManager>().healthMax -= 10;
-            players.GetComponent<HealthManager>().health -= 10;
+            var playerComp = player.GetComponent<Player>();
+            playerComp.SavePlayer();
         }
 
         if (Input.GetKeyDown(KeyCode.LeftShift))

@@ -268,28 +268,31 @@ public class Player : MonoBehaviour
     public void SavePlayer()
     {
         string path = "SaveFile/Save.txt";
-        var playerComp = player.getcomponent<Player>();
-        long SaveNumber = 0;
-        if (PlayerHealth < 10){
-            PlayerHealth *= 100;
-        }else if(PlayerHealth < 100)
+        player = GameObject.Find("Player");
+        var playerComp = player.GetComponent<Player>();
+        String saveNumber;
+        if (PlayerHealth < 10)
         {
-            PlayerHealth *= 10;
+            saveNumber = "00" + PlayerHealth.ToString();
         }
-        SaveNumber = PlayerHealth;
-        SaveNumber = SaveNumber * 10 + sceneInt;
-        if (playerComp.icespellUnlocked)
+        else if (PlayerHealth < 100)
         {
-            SaveNumber = SaveNumber * 10 + 1;
+            saveNumber = "0" + PlayerHealth.ToString();
         }
-        else SaveNumber = SaveNumber * 10;
-        if (playerComp.earthspellUnlocked)
+        else { saveNumber = PlayerHealth.ToString(); }
+        saveNumber += sceneInt.ToString();
+        if (playerComp.iceUnlocked)
         {
-            SaveNumber = SaveNumber * 10 + 1;
+            saveNumber += "1";
         }
-        else SaveNumber = SaveNumber * 10;
+        else saveNumber += "0";
+        if (playerComp.earthUnlocked)
+        {
+            saveNumber += "1";
+        }
+        else saveNumber += "0";
 
-        string createText = sceneInt + PlayerHealth+ Environment.NewLine;
+        string createText = saveNumber+ Environment.NewLine;
         File.WriteAllText(path, createText);
     }
 
@@ -303,9 +306,18 @@ public class Player : MonoBehaviour
         StreamReader reader = new StreamReader(path);
         savefile = reader.ReadToEnd();
         char[] b = savefile.ToCharArray();
-        sceneInt = b[0]-48;
-        //Debug.Log(b[3] * 100 + b[2] * 10 + b[1]);
-       // healthManager.SetHealth(b[3] * 100 + b[2] * 10 + b[1]);
+        sceneInt = b[3]-48;
+        PlayerHealth = b[0] * 100 + b[1] * 10 + b[2];
+        if (b[4] == 1)
+        {
+            iceUnlocked = true;
+        }
+        else { iceUnlocked = false; }
+        if (b[5] == 1)
+        {
+            earthUnlocked = true;
+        }
+        else { earthUnlocked = false; }
         reader.Close();
     }
     void PlayerMoves()
