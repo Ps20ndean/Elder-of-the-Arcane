@@ -268,15 +268,27 @@ public class Player : MonoBehaviour
     public void SavePlayer()
     {
         string path = "SaveFile/Save.txt";
-
-        // This text is added only once to the file.
+        var playerComp = player.getcomponent<Player>();
+        long SaveNumber = 0;
         if (PlayerHealth < 10){
             PlayerHealth *= 100;
         }else if(PlayerHealth < 100)
         {
             PlayerHealth *= 10;
         }
-        
+        SaveNumber = PlayerHealth;
+        SaveNumber = SaveNumber * 10 + sceneInt;
+        if (playerComp.icespellUnlocked)
+        {
+            SaveNumber = SaveNumber * 10 + 1;
+        }
+        else SaveNumber = SaveNumber * 10;
+        if (playerComp.earthspellUnlocked)
+        {
+            SaveNumber = SaveNumber * 10 + 1;
+        }
+        else SaveNumber = SaveNumber * 10;
+
         string createText = sceneInt + PlayerHealth+ Environment.NewLine;
         File.WriteAllText(path, createText);
     }
