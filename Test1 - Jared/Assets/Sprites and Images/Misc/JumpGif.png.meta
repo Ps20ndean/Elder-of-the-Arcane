@@ -1,0 +1,847 @@
+fileFormatVersion: 2
+guid: 4f6592758b7068d429b93bd9ccc91e63
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 812873324685994625
+    second: JumpGif_0
+  - first:
+      213: 4978131768894276335
+    second: JumpGif_1
+  - first:
+      213: -832687907533891963
+    second: JumpGif_2
+  - first:
+      213: -1025575775629353507
+    second: JumpGif_3
+  - first:
+      213: 6164039670653449110
+    second: JumpGif_4
+  - first:
+      213: -8636976260489264834
+    second: JumpGif_5
+  - first:
+      213: -6484936741005951991
+    second: JumpGif_6
+  - first:
+      213: -4463488393998386809
+    second: JumpGif_7
+  - first:
+      213: 6165706668636059463
+    second: JumpGif_8
+  - first:
+      213: 788450029490457384
+    second: JumpGif_9
+  - first:
+      213: -3680123215484661019
+    second: JumpGif_10
+  - first:
+      213: 7016838848366718937
+    second: JumpGif_11
+  - first:
+      213: 8889646219858930745
+    second: JumpGif_12
+  - first:
+      213: -877043370306825878
+    second: JumpGif_13
+  - first:
+      213: -668126451549264307
+    second: JumpGif_14
+  - first:
+      213: -285134690936538134
+    second: JumpGif_15
+  - first:
+      213: 5670650513335435475
+    second: JumpGif_16
+  - first:
+      213: -1844544955876853574
+    second: JumpGif_17
+  - first:
+      213: 1375528502643243083
+    second: JumpGif_18
+  - first:
+      213: -4540049137348931785
+    second: JumpGif_19
+  - first:
+      213: 2507006929774972076
+    second: JumpGif_20
+  - first:
+      213: -7225238070326904101
+    second: JumpGif_21
+  - first:
+      213: -4200469567529578791
+    second: JumpGif_22
+  - first:
+      213: -956573491983161085
+    second: JumpGif_23
+  - first:
+      213: 8203311728072458232
+    second: JumpGif_24
+  - first:
+      213: -372536803498220714
+    second: JumpGif_25
+  - first:
+      213: 136867102910612757
+    second: JumpGif_26
+  - first:
+      213: 5465889408854903491
+    second: JumpGif_27
+  - first:
+      213: 8305948432317834657
+    second: JumpGif_28
+  - first:
+      213: -2774148001491217911
+    second: JumpGif_29
+  - first:
+      213: 3655602515418726630
+    second: JumpGif_30
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: JumpGif_0
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 1654
+        width: 94
+        height: 292
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d80c450c92521444a91e9584aba70701
+      internalID: 812873324685994625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpGif_1
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 1752
+        width: 94
+        height: 292
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13e984fe98ab2174a89cb329a5028c64
+      internalID: 4978131768894276335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpGif_2
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 1752
+        width: 94
+        height: 292
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86b8cd5d32bee2a4dae7e2efccea5909
+      internalID: -832687907533891963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpGif_3
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 1752
+        width: 94
+        height: 292
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e689bd63590b35a4683fd2428efc794b
+      internalID: -1025575775629353507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpGif_4
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 1752
+        width: 94
+        height: 292
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 447898ddc55ffc746ac5eb153c34e6b1
+      internalID: 6164039670653449110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpGif_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1460
+        width: 94
+        height: 292
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bdaaebe0aff74643af66ea49e13ef90
+      internalID: -8636976260489264834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpGif_6
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 1460
+        width: 94
+        height: 292
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7055d8b211a91334990b5c6433d88161
+      internalID: -6484936741005951991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpGif_7
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 1460
+        width: 94
+        height: 292
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49b8e2550e1026e428c4cf5d31584c8e
+      internalID: -4463488393998386809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpGif_8
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 1460
+        width: 94
+        height: 292
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc92a83f786c287408b2f83836c1775a
+      internalID: 6165706668636059463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpGif_9
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 1460
+        width: 94
+        height: 292
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15bc689eb49d3664192c71b3780fb9b5
+      internalID: 788450029490457384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpGif_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1168
+        width: 94
+        height: 292
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7226da4a15500f045a3e7668144c6128
+      internalID: -3680123215484661019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpGif_11
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 1168
+        width: 94
+        height: 292
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24846e10a3c6be04a9f6de14c11b8a2a
+      internalID: 7016838848366718937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpGif_12
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 1168
+        width: 94
+        height: 292
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 967ff812348c14e4bbbbe5207f4e82ef
+      internalID: 8889646219858930745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpGif_13
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 1168
+        width: 94
+        height: 292
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99f18b870c14a9c46a2e01bf0321022a
+      internalID: -877043370306825878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpGif_14
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 1168
+        width: 94
+        height: 292
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0535654dac0cef419fe4f22b3dc01cf
+      internalID: -668126451549264307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpGif_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 876
+        width: 94
+        height: 292
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a23ed69c50a6cb24caef6f0bd53abd6e
+      internalID: -285134690936538134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpGif_16
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 876
+        width: 94
+        height: 292
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f810846a5cdf56438781737be859843
+      internalID: 5670650513335435475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpGif_17
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 876
+        width: 94
+        height: 292
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1fe5d0d256c45347ac94171ba1e3cda
+      internalID: -1844544955876853574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpGif_18
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 876
+        width: 94
+        height: 292
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfed614783e6fc048891763f6f551879
+      internalID: 1375528502643243083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpGif_19
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 876
+        width: 94
+        height: 292
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05ec3669be1d5d64f9719e1bc64cdaa0
+      internalID: -4540049137348931785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpGif_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 584
+        width: 94
+        height: 292
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54f04c490aa13c746b48716904bc450b
+      internalID: 2507006929774972076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpGif_21
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 584
+        width: 94
+        height: 292
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 141c757180866dd439f8f80cfc5255ab
+      internalID: -7225238070326904101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpGif_22
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 584
+        width: 94
+        height: 292
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85bb72cd67b89c545bfaac740df1b88f
+      internalID: -4200469567529578791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpGif_23
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 584
+        width: 94
+        height: 292
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d14ac98aef38b74d8b1fb3f1a898f6a
+      internalID: -956573491983161085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpGif_24
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 584
+        width: 94
+        height: 292
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0e04cc5a75d55344beb706c9e777dbc
+      internalID: 8203311728072458232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpGif_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 292
+        width: 94
+        height: 292
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 039e56b4bb1934e49a6f4ef0d720eb3b
+      internalID: -372536803498220714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpGif_26
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 292
+        width: 94
+        height: 292
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79dfb714a0621234d9510c2214429eff
+      internalID: 136867102910612757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpGif_27
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 292
+        width: 94
+        height: 292
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf1d63adba14aaa4d8f0070c38f883c5
+      internalID: 5465889408854903491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpGif_28
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 292
+        width: 94
+        height: 292
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c81ab6e289902db45ab452f44947f825
+      internalID: 8305948432317834657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpGif_29
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 292
+        width: 94
+        height: 292
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e039b2224ab14de4fbc60ab6bcea99ac
+      internalID: -2774148001491217911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpGif_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 94
+        height: 292
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7151c1640245264083918ad8bb54dd3
+      internalID: 3655602515418726630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
