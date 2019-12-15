@@ -306,8 +306,8 @@ public class Player : MonoBehaviour
         StreamReader reader = new StreamReader(path);
         savefile = reader.ReadToEnd();
         char[] b = savefile.ToCharArray();
-        sceneInt = b[3]-48;
         PlayerHealth = b[0] * 100 + b[1] * 10 + b[2];
+        sceneInt = b[3] - 48;
         if (b[4] == 1)
         {
             iceUnlocked = true;
