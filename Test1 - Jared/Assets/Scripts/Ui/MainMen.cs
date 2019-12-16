@@ -8,7 +8,7 @@ public class MainMen : MonoBehaviour
     //Starts new game
     public void NewGame ()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("Tavern (Start)");
     }
     //Loads save
     public void LoadGame()
@@ -24,6 +24,6 @@ public class MainMen : MonoBehaviour
     }
     public void LoadTutorial()
     {
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene("Tutorial");
     }
 }
