@@ -115,7 +115,9 @@ public class EnemyAI : HealthBar
     }
     IEnumerator startInvinc(float seconds)
     {
+        //var alpha = player.GetComponent<SpriteRenderer>().color.a;
         Physics2D.IgnoreLayerCollision(8, 10, true);
+       // alpha = .75f;                 doesnt work, fix this tomorrow
         yield return new WaitForSeconds(seconds);
         Physics2D.IgnoreLayerCollision(8, 10, false);
     }
