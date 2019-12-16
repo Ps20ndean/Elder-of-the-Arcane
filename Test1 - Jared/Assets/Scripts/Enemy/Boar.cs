@@ -40,6 +40,6 @@ public class Boar : EnemyAI
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        TakeDamage(30, 15, 20, collision);
+        TakeDamage(30, 15, 20, 20, collision);
     }
 }
