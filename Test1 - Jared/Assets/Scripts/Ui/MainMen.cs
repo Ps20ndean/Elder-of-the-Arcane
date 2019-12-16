@@ -22,4 +22,8 @@ public class MainMen : MonoBehaviour
     {
         Application.Quit();
     }
+    public void LoadTutorial()
+    {
+        SceneManager.LoadScene(5);
+    }
 }
