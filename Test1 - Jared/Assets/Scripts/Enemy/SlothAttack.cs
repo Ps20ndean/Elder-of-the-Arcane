@@ -55,6 +55,6 @@ using UnityEngine.UI;
     } 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        TakeDamage(30, 15, 35, collision);
+        TakeDamage(30, 15, 35, 100, collision);
     }
 }
