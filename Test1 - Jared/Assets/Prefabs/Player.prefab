@@ -368,7 +368,7 @@ MonoBehaviour:
   iceBook: {fileID: 822633960477185243}
   fireBook: {fileID: 822633961239878640}
   speedBook: {fileID: 8154700259502949900}
-  earthBook: {fileID: 0}
+  earthBook: {fileID: 5624137983296787109}
   fireBookHeld: 0
   iceBookHeld: 0
   speedBookHeld: 0
@@ -390,6 +390,8 @@ MonoBehaviour:
   fireballText: {fileID: 0}
   earthText: {fileID: 0}
   healthBar: {fileID: 859126145431320860}
+  scoreText: {fileID: 0}
+  scoreInt: 0
   iceUnlocked: 0
   earthUnlocked: 0
   moveX: 0
@@ -398,7 +400,11 @@ MonoBehaviour:
   rb: {fileID: 822633960989871288}
   bookHeldInt: 0
   savefile: 
-  dust: {fileID: 0}
+  runDust: {fileID: 5404551183960939169}
+  speedDust: {fileID: 0}
+  speedEffect: {fileID: 0}
+  iceEffect: {fileID: 0}
+  fireEffect: {fileID: 0}
 --- !u!95 &4032665527365661512
 Animator:
   serializedVersion: 3
@@ -10552,10 +10558,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 822633960989871289}
     m_Modifications:
-    - target: {fileID: 1473727354331688, guid: 01a6b42a1d84b664c890d8dcb066becd, type: 3}
-      propertyPath: m_Name
-      value: HealthBar
-      objectReference: {fileID: 0}
     - target: {fileID: 4090514546342678, guid: 01a6b42a1d84b664c890d8dcb066becd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.05
@@ -10599,6 +10601,10 @@ PrefabInstance:
     - target: {fileID: 4090514546342678, guid: 01a6b42a1d84b664c890d8dcb066becd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1473727354331688, guid: 01a6b42a1d84b664c890d8dcb066becd, type: 3}
+      propertyPath: m_Name
+      value: HealthBar
       objectReference: {fileID: 0}
     - target: {fileID: 4497247268064488, guid: 01a6b42a1d84b664c890d8dcb066becd, type: 3}
       propertyPath: m_LocalScale.x

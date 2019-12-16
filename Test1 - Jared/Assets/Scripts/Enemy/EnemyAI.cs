@@ -84,9 +84,7 @@ public class EnemyAI : HealthBar
 
     public IEnumerator WaitMov(float Seconds)
     {
-        Physics2D.IgnoreCollision(gameObject.GetComponent<BoxCollider2D>(), player.GetComponent<BoxCollider2D>(), true);
         yield return new WaitForSeconds(Seconds);
-        Physics2D.IgnoreCollision(gameObject.GetComponent<BoxCollider2D>(), player.GetComponent<BoxCollider2D>(), false);
         movement = true;
     }
     public void TakeDamage(int FireDamage, int IceDamage, int PlayerDamage, int AddScore, Collision2D collision)
@@ -96,8 +94,10 @@ public class EnemyAI : HealthBar
         if (collision.gameObject.tag == "Player")
         {
             player.GetComponent<HealthManager>().Damage(PlayerDamage);
+            StartCoroutine(startInvinc(20f));
             movement = false;
             StartCoroutine(WaitMov(1.25f));
+            
         }
 
         if (collision.gameObject.tag == "FireBall")
@@ -112,6 +112,14 @@ public class EnemyAI : HealthBar
         {
             playerComp.scoreInt += AddScore;
         }
+    }
+    IEnumerator startInvinc(float seconds)
+    {
+        //var alpha = player.GetComponent<SpriteRenderer>().color.a;
+        Physics2D.IgnoreLayerCollision(8, 10, true);
+       // alpha = .75f;                 doesnt work, fix this tomorrow
+        yield return new WaitForSeconds(seconds);
+        Physics2D.IgnoreLayerCollision(8, 10, false);
     }
     public void enemyParameterCheck()
     {
