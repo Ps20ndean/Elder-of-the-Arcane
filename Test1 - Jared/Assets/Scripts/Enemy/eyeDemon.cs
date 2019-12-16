@@ -23,6 +23,6 @@ public class eyeDemon : EnemyAI
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        TakeDamage(30, 15, 30, collision);
+        TakeDamage(30, 15, 30, 25, collision);
     }
 }

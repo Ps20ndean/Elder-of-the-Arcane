@@ -84,11 +84,15 @@ public class EnemyAI : HealthBar
 
     public IEnumerator WaitMov(float Seconds)
     {
+        Physics2D.IgnoreCollision(gameObject.GetComponent<BoxCollider2D>(), player.GetComponent<BoxCollider2D>(), true);
         yield return new WaitForSeconds(Seconds);
+        Physics2D.IgnoreCollision(gameObject.GetComponent<BoxCollider2D>(), player.GetComponent<BoxCollider2D>(), false);
         movement = true;
     }
-    public void TakeDamage(int FireDamage, int IceDamage, int PlayerDamage, Collision2D collision)
+    public void TakeDamage(int FireDamage, int IceDamage, int PlayerDamage, int AddScore, Collision2D collision)
     {
+        var playerComp = player.GetComponent<Player>();
+
         if (collision.gameObject.tag == "Player")
         {
             player.GetComponent<HealthManager>().Damage(PlayerDamage);
@@ -103,6 +107,10 @@ public class EnemyAI : HealthBar
         if (collision.gameObject.tag == "Ice")
         {
             GetComponent<HealthManager>().Damage(IceDamage);
+        }
+        if (gameObject.GetComponent<HealthManager>().health <= 0)
+        {
+            playerComp.scoreInt += AddScore;
         }
     }
     public void enemyParameterCheck()

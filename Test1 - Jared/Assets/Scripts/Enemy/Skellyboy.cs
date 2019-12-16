@@ -18,6 +18,6 @@ public class Skellyboy : EnemyAI
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        TakeDamage(30, 15, 20, collision);
+        TakeDamage(30, 15, 20, 15, collision);
     }
 }

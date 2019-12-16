@@ -36,7 +36,7 @@ public class Slime : EnemyAI
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
-        TakeDamage(30, 15, 25, collision);
+        TakeDamage(30, 15, 25, 10, collision);
     }
     IEnumerator WaitJump()
     {
