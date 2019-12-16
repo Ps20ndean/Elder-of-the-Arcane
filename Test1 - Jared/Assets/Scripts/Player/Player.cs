@@ -129,6 +129,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        string scoreIntString = scoreInt.ToString();
         scoreText.GetComponent<Text>().text = scoreIntString;
 
         float h = Input.GetAxis("Horizontal");
