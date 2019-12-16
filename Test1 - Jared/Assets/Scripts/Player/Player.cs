@@ -52,7 +52,9 @@ public class Player : MonoBehaviour
     public GameObject fireballText;
     public GameObject earthText;
     public GameObject healthBar;
+    public GameObject scoreText;
 
+    public int scoreInt;
     public bool iceUnlocked;
     public bool earthUnlocked;
 
@@ -127,7 +129,8 @@ public class Player : MonoBehaviour
 
     void Update()
     {
- 
+        string scoreIntString = scoreInt.ToString();
+        scoreText.GetComponent<Text>().text = scoreIntString;
 
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
