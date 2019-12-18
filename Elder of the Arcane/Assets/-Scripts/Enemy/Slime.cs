@@ -5,7 +5,6 @@ using System;
 
 public class Slime : EnemyAI
 {
-    
 
     private new void Start()
     {
@@ -16,7 +15,7 @@ public class Slime : EnemyAI
     new void Update()
     {
         Distance();
-        if (movement && inDist && movement)
+        if (movement && inDist)
         {
             anime.SetBool("SlimeJump", true);
         }
@@ -25,9 +24,10 @@ public class Slime : EnemyAI
             anime.SetBool("SlimeJump", false);
         }
         if (target){ 
-        if ((target.position.y >= transform.position.y) && myRigidBody.velocity.y == 0 && (Math.Abs(target.position.x - this.transform.position.x) < 20) && inDist && !isJumping)
+        if ( myRigidBody.velocity.y == 0 && (Math.Abs(target.position.x - this.transform.position.x) < 20) && inDist && !isJumping)
         {
-            myRigidBody.velocity = new Vector3(myRigidBody.velocity.x, 7.25f, 0); ;
+            myRigidBody.velocity = new Vector3(myRigidBody.velocity.x, 7.25f, 0);
+            isJumping = true;
             StartCoroutine(WaitJump());
         }
         }
@@ -40,14 +40,15 @@ public class Slime : EnemyAI
     }
     IEnumerator WaitJump()
     {
-        isJumping = true;
+
         if (isJumping)
         {
-            GetComponent<Animation>().enabled = true;
+            anime.enabled = true;
+            
         }
         else if (!isJumping)
         {
-            GetComponent<Animation>().enabled = false;
+            anime.enabled = false;
         }
         yield return new WaitForSeconds(2);
 

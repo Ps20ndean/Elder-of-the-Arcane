@@ -100,7 +100,7 @@ public class EnemyAI : HealthBar
                 player.GetComponent<HealthManager>().Damage(PlayerDamage);
                 startInvinc(20);
                 movement = false;
-                WaitMov(1);
+                WaitMov(1f);
 
             }
 

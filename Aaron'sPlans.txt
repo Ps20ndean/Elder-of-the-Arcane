@@ -1,9 +1,17 @@
 1) Large/ Small slimes
+
 2) Boar Prefab Fix
+
 3) Particles
+
 4) Speed Spell Effect
+
 5) File Management for Tavern, Tutorial, Level 2, and Level 3
+
 6) Finish level design for level 3
+
 7) Stop Slime animations when in air
+
 8) Stop enemy movement when damage is dealt
+
 9) Nice looking knockback
