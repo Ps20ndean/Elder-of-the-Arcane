@@ -15,3 +15,5 @@
 8) Stop enemy movement when damage is dealt
 
 9) Nice looking knockback
+
+10) Book bobbing
