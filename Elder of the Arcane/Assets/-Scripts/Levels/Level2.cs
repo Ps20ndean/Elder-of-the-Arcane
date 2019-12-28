@@ -27,8 +27,17 @@ public class Level2 : MonoBehaviour
             tavernText.SetActive(true);
             if (Input.GetKeyDown(KeyCode.E))
             {
-
+                Scene currentScene = SceneManager.GetActiveScene();
+                if (currentScene.name == "Tutorial")
+                {
+                    SceneManager.LoadScene("Menu");
+                }
+                else if (currentScene.name == "Level1") { 
                 SceneManager.LoadScene("Level2");
+                } else if (currentScene.name == "Level2")
+                {
+                    SceneManager.LoadScene("Level3");
+                }
                 playercomp.SavePlayer();
             }
         }
