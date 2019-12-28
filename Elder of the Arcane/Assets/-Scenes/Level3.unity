@@ -1923,11 +1923,6 @@ PrefabInstance:
       propertyPath: inventory
       value: 
       objectReference: {fileID: 1252318883}
-    - target: {fileID: 822633960989871291, guid: bcea3966618c76a48b33a47210fcaa71,
-        type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 1252318883}
     - target: {fileID: 5738127269473703714, guid: bcea3966618c76a48b33a47210fcaa71,
         type: 3}
       propertyPath: Death
@@ -2053,6 +2048,16 @@ PrefabInstance:
       propertyPath: fireEffect
       value: 
       objectReference: {fileID: 1342443723}
+    - target: {fileID: 5738127269473703714, guid: bcea3966618c76a48b33a47210fcaa71,
+        type: 3}
+      propertyPath: scoreText
+      value: 
+      objectReference: {fileID: 1388710357}
+    - target: {fileID: 822633960989871291, guid: bcea3966618c76a48b33a47210fcaa71,
+        type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 1252318883}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcea3966618c76a48b33a47210fcaa71, type: 3}
 --- !u!114 &620586618
@@ -2491,10 +2496,15 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9216262284846484412, guid: c5e733fa5b3706d40a6152cb85af0e07,
+    - target: {fileID: 5588114840650408144, guid: c5e733fa5b3706d40a6152cb85af0e07,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.8000488
+      value: -5.8999023
+      objectReference: {fileID: 0}
+    - target: {fileID: 5588114840650408144, guid: c5e733fa5b3706d40a6152cb85af0e07,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.2000122
       objectReference: {fileID: 0}
     - target: {fileID: 4410316813788866835, guid: c5e733fa5b3706d40a6152cb85af0e07,
         type: 3}
@@ -2506,15 +2516,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 1.0999756
       objectReference: {fileID: 0}
-    - target: {fileID: 5588114840650408144, guid: c5e733fa5b3706d40a6152cb85af0e07,
+    - target: {fileID: 9216262284846484412, guid: c5e733fa5b3706d40a6152cb85af0e07,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -5.8999023
-      objectReference: {fileID: 0}
-    - target: {fileID: 5588114840650408144, guid: c5e733fa5b3706d40a6152cb85af0e07,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.2000122
+      value: -0.8000488
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5e733fa5b3706d40a6152cb85af0e07, type: 3}
@@ -2968,6 +2973,12 @@ ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 5404551183960939169, guid: bcea3966618c76a48b33a47210fcaa71,
     type: 3}
   m_PrefabInstance: {fileID: 597100945}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1388710357 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6726952610833299437, guid: c5e733fa5b3706d40a6152cb85af0e07,
+    type: 3}
+  m_PrefabInstance: {fileID: 763786134}
   m_PrefabAsset: {fileID: 0}
 --- !u!213 &1580866178
 Sprite:

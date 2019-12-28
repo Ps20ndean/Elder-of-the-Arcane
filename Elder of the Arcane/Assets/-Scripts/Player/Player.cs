@@ -270,33 +270,37 @@ public class Player : MonoBehaviour
     }
     public void SavePlayer()
     {
-        string path = "SaveFile/Save.txt";
-        player = GameObject.Find("Player");
-        var playerComp = player.GetComponent<Player>();
-        String saveNumber;
-        if (PlayerHealth < 10)
+        Scene currentScene = SceneManager.GetActiveScene();
+        if ((currentScene.name != "Tutorial")|| (currentScene.name != "Menu"))
         {
-            saveNumber = "00" + PlayerHealth.ToString();
-        }
-        else if (PlayerHealth < 100)
-        {
-            saveNumber = "0" + PlayerHealth.ToString();
-        }
-        else { saveNumber = PlayerHealth.ToString(); }
-        saveNumber += sceneInt.ToString();
-        if (playerComp.iceUnlocked)
-        {
-            saveNumber += "1";
-        }
-        else saveNumber += "0";
-        if (playerComp.earthUnlocked)
-        {
-            saveNumber += "1";
-        }
-        else saveNumber += "0";
+            string path = "SaveFile/Save.txt";
+            player = GameObject.Find("Player");
+            var playerComp = player.GetComponent<Player>();
+            String saveNumber;
+            if (PlayerHealth < 10)
+            {
+                saveNumber = "00" + PlayerHealth.ToString();
+            }
+            else if (PlayerHealth < 100)
+            {
+                saveNumber = "0" + PlayerHealth.ToString();
+            }
+            else { saveNumber = PlayerHealth.ToString(); }
+            saveNumber += sceneInt.ToString();
+            if (playerComp.iceUnlocked)
+            {
+                saveNumber += "1";
+            }
+            else saveNumber += "0";
+            if (playerComp.earthUnlocked)
+            {
+                saveNumber += "1";
+            }
+            else saveNumber += "0";
 
-        string createText = saveNumber+ Environment.NewLine;
-        File.WriteAllText(path, createText);
+            string createText = saveNumber + Environment.NewLine;
+            File.WriteAllText(path, createText);
+        }
     }
 
 
