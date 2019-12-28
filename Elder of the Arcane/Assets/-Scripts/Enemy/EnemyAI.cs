@@ -101,7 +101,7 @@ public class EnemyAI : HealthBar
                 startInvinc(20);
                 movement = false;
                 WaitMov(1f);
-
+                movement = true;
             }
 
             if (collision.gameObject.tag == "FireBall")
