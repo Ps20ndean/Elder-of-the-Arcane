@@ -257,9 +257,6 @@ public class Player : MonoBehaviour
     }
     public void Dead()
     {
-        Death.SetActive(true);
-        deathText.SetActive(true);
-        actualDeath.SetActive(true);
         fire1.SetActive(false);
         fire2.SetActive(false);
         fire3.SetActive(false);
@@ -267,6 +264,7 @@ public class Player : MonoBehaviour
         ice2.SetActive(false);
         ice3.SetActive(false);
         healthBar.SetActive(false);
+        SceneManager.LoadScene("GameOver");
     }
     public void SavePlayer()
     {
