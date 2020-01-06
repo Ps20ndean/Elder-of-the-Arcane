@@ -17451,8 +17451,24 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6513533350858786093, guid: c5e733fa5b3706d40a6152cb85af0e07,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 5.1748047
+      objectReference: {fileID: 0}
+    - target: {fileID: 6513533350858786093, guid: c5e733fa5b3706d40a6152cb85af0e07,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5e733fa5b3706d40a6152cb85af0e07, type: 3}
+--- !u!1 &1830787104 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6726952610833299437, guid: c5e733fa5b3706d40a6152cb85af0e07,
+    type: 3}
+  m_PrefabInstance: {fileID: 1830787103}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1839988797 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 678719773982835866, guid: c5e733fa5b3706d40a6152cb85af0e07,
@@ -17656,6 +17672,11 @@ PrefabInstance:
       propertyPath: fireEffect
       value: 
       objectReference: {fileID: 512665880}
+    - target: {fileID: 5738127269473703714, guid: bcea3966618c76a48b33a47210fcaa71,
+        type: 3}
+      propertyPath: scoreText
+      value: 
+      objectReference: {fileID: 1830787104}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcea3966618c76a48b33a47210fcaa71, type: 3}
 --- !u!198 &1981655963 stripped
