@@ -6,6 +6,7 @@ public class ProjectileAttack : MonoBehaviour
 {
     public GameObject fireball;
     public GameObject ice;
+    public GameObject heart;
     public GameObject speed;
     public Player player;
     GameObject b;
@@ -113,6 +114,10 @@ public class ProjectileAttack : MonoBehaviour
         Destroy(bice3, 2f);
     }
 
+    void Heal()
+    {
+        GameObject bheart = (GameObject)(Instantiate(heart, transform.position + transform.up * 3f, Quaternion.identity));
+    }
     IEnumerator RechargeFireball()
     {
 
@@ -560,10 +565,7 @@ public class ProjectileAttack : MonoBehaviour
         {
             speedChargeAmounts = 3;
         }
-        if (earthChargeAmounts == 3 && player.earthBookHeld == true)
-        {
 
-        }
     }
 }
 

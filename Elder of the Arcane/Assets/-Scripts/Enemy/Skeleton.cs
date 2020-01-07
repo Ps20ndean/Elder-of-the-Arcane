@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Skellyboy : EnemyAI
+public class Skeleton : EnemyAI
 {
     // Start is called before the first frame update
     new void Start()

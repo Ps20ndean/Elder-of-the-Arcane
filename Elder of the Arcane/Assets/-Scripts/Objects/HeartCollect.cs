@@ -32,10 +32,12 @@ public class HeartCollect : MonoBehaviour
     }
         public void OnCollisionEnter2D(Collision2D collision)
     {
+        var playercomp = player.GetComponent<ProjectileAttack>();
             if (collision.gameObject.tag == "Player")
             {
                     player.GetComponent<HealthManager>().Heal(75);
                     Destroy(gameObject);
+            playercomp.earthChargeAmounts += 1;
             }
         }
 

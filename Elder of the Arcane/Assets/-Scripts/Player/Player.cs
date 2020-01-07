@@ -56,7 +56,6 @@ public class Player : MonoBehaviour
 
     public int scoreInt;
     public bool iceUnlocked;
-    public bool earthUnlocked;
 
     public float moveX;
 
@@ -290,11 +289,6 @@ public class Player : MonoBehaviour
                 saveNumber += "1";
             }
             else saveNumber += "0";
-            if (playerComp.earthUnlocked)
-            {
-                saveNumber += "1";
-            }
-            else saveNumber += "0";
 
             string createText = saveNumber + Environment.NewLine;
             File.WriteAllText(path, createText);
@@ -318,12 +312,7 @@ public class Player : MonoBehaviour
             iceUnlocked = true;
         }
         else { iceUnlocked = false; }
-        if (b[5] == 1)
-        {
-            earthUnlocked = true;
-        }
-        else { earthUnlocked = false; }
-        reader.Close();
+        
     }
     void PlayerMoves()
     {
