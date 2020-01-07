@@ -17,27 +17,11 @@ public class PlayerInput : MonoBehaviour {
 	void Update () {
 
         var players = GameObject.Find("Player");
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            players.GetComponent<HealthManager>().healthMax += 100000;
-            players.GetComponent<HealthManager>().health += 1000000;
-        }
         if (Input.GetKeyDown(KeyCode.G))
         {
             //Testing Only Delete me
             var playerComp = player.GetComponent<Player>();
             playerComp.SavePlayer();
-        }
-
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            //Testing Only Delete me
-            player.GetComponent<Player>().moveSpeed = 20;
-            player.CreateRunDust();
-        }
-        else if (Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            player.GetComponent<Player>().moveSpeed = 6.5f;
         }
 
         Vector2 directionalInput = new Vector2 (Input.GetAxisRaw ("Horizontal"), Input.GetAxisRaw ("Vertical"));
@@ -78,6 +62,7 @@ public class PlayerInput : MonoBehaviour {
         if (invOn)
         {
             inventory.SetActive(true);
+            
         }
         else if (!invOn)
         {
