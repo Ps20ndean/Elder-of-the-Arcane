@@ -650,7 +650,7 @@ public class ProjectileAttack : MonoBehaviour
             player.earthBook.SetActive(true);
             canAttack = true;
         }
-        else if (earthChargeAmounts == 0 || earthChargeAmounts <= 0 && player.earthBookHeld)
+        else if (earthChargeAmounts == 0 && player.earthBookHeld)
         {
             player.ice1.SetActive(false);
             player.ice2.SetActive(false);
