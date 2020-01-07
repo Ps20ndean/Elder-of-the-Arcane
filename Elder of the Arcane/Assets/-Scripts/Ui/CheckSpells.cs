@@ -10,15 +10,13 @@ public class CheckSpells : MonoBehaviour
     public GameObject iceBlocker;
     public GameObject iceRedBlocker;
     public GameObject earthInv;
-    public GameObject earthBlocker;
-    public GameObject earthRedBlocker;
     private void Start()
     {
         player = GameObject.Find("Player");
     }
     public void Update()
     {
-        CheckEarth();
+
         CheckIce();
     }
 
@@ -36,24 +34,6 @@ public class CheckSpells : MonoBehaviour
             iceButton.enabled = false;
             iceBlocker.GetComponent<Image>().enabled = true;
             iceRedBlocker.GetComponent<Image>().enabled = true;
-        }
-    }
-
-    public void CheckEarth()
-    {
-        var earthButton = earthInv.GetComponent<Button>();
-        var playerComp = player.GetComponent<Player>();
-        if (playerComp.earthUnlocked == true)
-        {
-            earthButton.enabled = true;
-            earthBlocker.GetComponent<Image>().enabled = false;
-            earthRedBlocker.GetComponent<Image>().enabled = false;
-        }
-        else
-        {
-            earthButton.enabled = false;
-            earthBlocker.GetComponent<Image>().enabled = true;
-            earthRedBlocker.GetComponent<Image>().enabled = true;
         }
     }
 }

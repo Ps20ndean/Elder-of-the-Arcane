@@ -96,7 +96,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8162ca83e92343b41b346b1ded722376, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iceClip: {fileID: 8300000, guid: 62b54ef3f04619c48ad7ef253a2fad9b, type: 3}
 --- !u!61 &1823425393704789948
 BoxCollider2D:
   m_ObjectHideFlags: 0
