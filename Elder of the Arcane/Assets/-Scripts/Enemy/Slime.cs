@@ -24,7 +24,7 @@ public class Slime : EnemyAI
             anime.SetBool("SlimeJump", false);
         }
         if (target){ 
-        if ( myRigidBody.velocity.y == 0 && (Math.Abs(target.position.x - this.transform.position.x) < 20) && inDist && !isJumping)
+        if (myRigidBody.velocity.y != 0 && inDist && !isJumping)
         {
             myRigidBody.velocity = new Vector3(myRigidBody.velocity.x, 7.25f, 0);
             isJumping = true;
@@ -44,14 +44,13 @@ public class Slime : EnemyAI
         if (isJumping)
         {
             anime.enabled = true;
-            
         }
         else if (!isJumping)
         {
             anime.enabled = false;
+            Debug.Log("Ugh");
         }
         yield return new WaitForSeconds(2);
-
         isJumping = false;
     }
   

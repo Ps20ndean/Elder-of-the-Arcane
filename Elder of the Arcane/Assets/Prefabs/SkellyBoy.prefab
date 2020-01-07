@@ -10,12 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4780913223909062798}
   - component: {fileID: 4780913223909062793}
-  - component: {fileID: 3358785129697484801}
   - component: {fileID: 4780913223909062799}
+  - component: {fileID: 8722527251684828964}
   - component: {fileID: 4780913223909062796}
   - component: {fileID: 4780913223909062803}
   - component: {fileID: 4780913223909062802}
   - component: {fileID: 4780913223909062797}
+  - component: {fileID: 6734069328915605391}
   m_Layer: 10
   m_Name: SkellyBoy
   m_TagString: Skellyboy
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 59cc3f2344cfe7c4fbd075eac35f55a0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 10, y: 10}
@@ -87,39 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3358785129697484801
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4780913223909062792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72538d14d0ca339438b8c8fbac711957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  healthMax: 100
-  healthBar: {x: 0, y: 0, z: 0}
-  overallHealthBar: {fileID: 0}
-  healthBars: {fileID: 0}
-  healthBarsBackground: {fileID: 0}
-  healthBarsBackgroundScale: {x: 0, y: 0, z: 0}
-  movement: 1
-  movementSpeed: 2
-  stoppingDistance: 13
-  facingRight: 1
-  canJump: 1
-  myRigidBody: {fileID: 0}
-  anime: {fileID: 0}
-  target: {fileID: 0}
-  player: {fileID: 0}
-  velocity: {x: 0, y: 0, z: 0}
-  isJumping: 0
-  dist: 0
-  inDist: 0
-  intFacingRight: 0
 --- !u!114 &4780913223909062799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,6 +107,39 @@ MonoBehaviour:
   healthBars: {fileID: 4781874596296234734}
   healthBarsBackground: {fileID: 4781742128015136518}
   healthBarsBackgroundScale: {x: 0, y: 0, z: 0}
+--- !u!114 &8722527251684828964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4780913223909062792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aca57e601a342884386f1da87ec45318, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  healthMax: 100
+  healthBar: {x: 0, y: 0, z: 0}
+  overallHealthBar: {fileID: 4781709445371571184}
+  healthBars: {fileID: 4781874596296234734}
+  healthBarsBackground: {fileID: 4781742128015136518}
+  healthBarsBackgroundScale: {x: 0, y: 0, z: 0}
+  movement: 1
+  movementSpeed: 2
+  stoppingDistance: 13
+  facingRight: 1
+  canJump: 1
+  myRigidBody: {fileID: 0}
+  anime: {fileID: 0}
+  target: {fileID: 0}
+  player: {fileID: 0}
+  velocity: {x: 0, y: 0, z: 0}
+  isJumping: 0
+  dist: 0
+  inDist: 0
+  intFacingRight: 0
 --- !u!61 &4780913223909062796
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -152,7 +153,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.53174734, y: -0.04644847}
+  m_Offset: {x: -0.41511655, y: -0.046448708}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -163,7 +164,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.809537, y: 8.049261}
+  m_Size: {x: 6.586742, y: 8.049261}
   m_EdgeRadius: 0
 --- !u!114 &4780913223909062803
 MonoBehaviour:
@@ -217,6 +218,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!95 &6734069328915605391
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4780913223909062792}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7f47ec802dd6037458561cff389604a5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &4780913223387040216
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -296,15 +316,15 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1065743225566564, guid: 01a6b42a1d84b664c890d8dcb066becd, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1440491198422750, guid: 01a6b42a1d84b664c890d8dcb066becd, type: 3}
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1573002466582326, guid: 01a6b42a1d84b664c890d8dcb066becd, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1065743225566564, guid: 01a6b42a1d84b664c890d8dcb066becd, type: 3}
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
