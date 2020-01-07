@@ -10,7 +10,6 @@ public class HealthManager : MonoBehaviour
     public int healthMax = 100;
     Player player;
 
-
     void Start()
     {
         // on start set health to their max health to reset values

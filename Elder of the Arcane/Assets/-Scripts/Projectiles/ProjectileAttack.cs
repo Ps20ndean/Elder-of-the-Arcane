@@ -64,6 +64,14 @@ public class ProjectileAttack : MonoBehaviour
                 ShootSpeed();
             }
         }
+        if (canAttack && earthChargeAmounts >= 1 && player.earthBookHeld)
+        {
+            if (Input.GetKeyDown(KeyCode.K) || (Input.GetKeyDown(KeyCode.L)))
+            {
+                earthChargeAmounts -= 1;
+                ShootHeal();
+            }
+        }
     }
 
     void ShootSpeed()
@@ -118,8 +126,10 @@ public class ProjectileAttack : MonoBehaviour
     {
         var playercomp = player.GetComponent<HealthManager>();
         GameObject bheart = (GameObject)(Instantiate(heart, transform.position + transform.up * 3f, Quaternion.identity));
+        bheart.GetComponent<BoxCollider2D>().enabled = false;
 
-        playercomp.health += 100;
+        playercomp.Heal(100);
+        Destroy(bheart, 2f);
     }
     IEnumerator RechargeFireball()
     {
