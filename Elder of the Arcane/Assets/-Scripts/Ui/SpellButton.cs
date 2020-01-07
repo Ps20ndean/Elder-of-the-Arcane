@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpellButton : MonoBehaviour
 {
     private GameObject player;
-    public Player playerComp;
+    private Player playerComp;
 
     public void Start()
     {
