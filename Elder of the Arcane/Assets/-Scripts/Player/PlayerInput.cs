@@ -62,13 +62,11 @@ public class PlayerInput : MonoBehaviour {
         if (invOn)
         {
             inventory.SetActive(true);
-            player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
             
         }
         else if (!invOn)
         {
             inventory.SetActive(false);
-            player.GetComponent<Rigidbody2D>().constraints = ~RigidbodyConstraints2D.FreezePosition;
         }
     }
 }
