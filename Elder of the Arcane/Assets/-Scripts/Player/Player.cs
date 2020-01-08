@@ -284,11 +284,26 @@ public class Player : MonoBehaviour
             }
             else { saveNumber = PlayerHealth.ToString(); }
             saveNumber += sceneInt.ToString();
-            if (playerComp.iceUnlocked)
+            if (scoreInt < 10)
             {
-                saveNumber += "1";
+                saveNumber += "0000" + scoreInt;
+            }else if (scoreInt < 100)
+            {
+                saveNumber += "000" + scoreInt;
             }
-            else saveNumber += "0";
+            else if (scoreInt < 1000)
+            {
+                saveNumber += "00" + scoreInt;
+            }
+            else if (scoreInt < 10000)
+            {
+                saveNumber += "0" + scoreInt;
+            }
+            else
+            {
+                saveNumber += scoreInt;
+            }
+
 
             string createText = saveNumber + Environment.NewLine;
             File.WriteAllText(path, createText);
@@ -307,12 +322,9 @@ public class Player : MonoBehaviour
         char[] b = savefile.ToCharArray();
         PlayerHealth = b[0] * 100 + b[1] * 10 + b[2];
         sceneInt = b[3] - 48;
-        if (b[4] == 1)
-        {
-            iceUnlocked = true;
-        }
-        else { iceUnlocked = false; }
-        
+        scoreInt = b[4] * 10000 + b[5] * 1000 + b[6] * 100 + b[7] * 10 + b[8];
+
+
     }
     void PlayerMoves()
     {
