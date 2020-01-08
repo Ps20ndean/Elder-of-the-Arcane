@@ -303,6 +303,10 @@ public class ProjectileAttack : MonoBehaviour
             player.earth3.SetActive(false);
             player.earthText.SetActive(false);
             player.earthBook.SetActive(false);
+            player.earthBookHeld = false;
+            player.fireBookHeld = true;
+            player.iceBookHeld = false;
+            player.speedBookHeld = false;
             canAttack = false;
         }
         else if (fireChargeAmounts == 1 && player.fireBookHeld)
@@ -327,6 +331,10 @@ public class ProjectileAttack : MonoBehaviour
             player.earth3.SetActive(false);
             player.earthText.SetActive(false);
             player.earthBook.SetActive(false);
+            player.earthBookHeld = false;
+            player.fireBookHeld = true;
+            player.iceBookHeld = false;
+            player.speedBookHeld = false;
             canAttack = true;
         }
         else if (fireChargeAmounts == 2 && player.fireBookHeld)
@@ -351,6 +359,10 @@ public class ProjectileAttack : MonoBehaviour
             player.earth3.SetActive(false);
             player.earthText.SetActive(false);
             player.earthBook.SetActive(false);
+            player.earthBookHeld = false;
+            player.fireBookHeld = true;
+            player.iceBookHeld = false;
+            player.speedBookHeld = false;
             canAttack = true;
         }
         else if (fireChargeAmounts == 3 && player.fireBookHeld)
@@ -370,6 +382,10 @@ public class ProjectileAttack : MonoBehaviour
             player.iceBook.SetActive(false);
             player.speedBook.SetActive(false);
             player.speedText.SetActive(false);
+            player.earthBookHeld = false;
+            player.fireBookHeld = true;
+            player.iceBookHeld = false;
+            player.speedBookHeld = false;
             canAttack = true;
         }
         if (fireChargeAmounts >= 4)
@@ -398,6 +414,10 @@ public class ProjectileAttack : MonoBehaviour
             player.earth3.SetActive(false);
             player.earthText.SetActive(false);
             player.earthBook.SetActive(false);
+            player.earthBookHeld = false;
+            player.fireBookHeld = false;
+            player.iceBookHeld = true;
+            player.speedBookHeld = false;
             canAttack = false;
         }
         else if (iceChargeAmounts == 1 && player.iceBookHeld)
@@ -423,6 +443,10 @@ public class ProjectileAttack : MonoBehaviour
             player.earth3.SetActive(false);
             player.earthText.SetActive(false);
             player.earthBook.SetActive(false);
+            player.earthBookHeld = false;
+            player.fireBookHeld = false;
+            player.iceBookHeld = true;
+            player.speedBookHeld = false;
             canAttack = true;
         }
         else if (iceChargeAmounts == 2 && player.iceBookHeld)
@@ -447,6 +471,10 @@ public class ProjectileAttack : MonoBehaviour
             player.earth3.SetActive(false);
             player.earthText.SetActive(false);
             player.earthBook.SetActive(false);
+            player.earthBookHeld = false;
+            player.fireBookHeld = false;
+            player.iceBookHeld = true;
+            player.speedBookHeld = false;
             canAttack = true;
         }
         else if (iceChargeAmounts == 3 && player.iceBookHeld)
@@ -471,6 +499,10 @@ public class ProjectileAttack : MonoBehaviour
             player.earth3.SetActive(false);
             player.earthText.SetActive(false);
             player.earthBook.SetActive(false);
+            player.earthBookHeld = false;
+            player.fireBookHeld = false;
+            player.iceBookHeld = true;
+            player.speedBookHeld = false;
             canAttack = true;
         }
         if (iceChargeAmounts >= 4)
@@ -499,6 +531,10 @@ public class ProjectileAttack : MonoBehaviour
             player.earth3.SetActive(false);
             player.earthText.SetActive(false);
             player.earthBook.SetActive(false);
+            player.earthBookHeld = false;
+            player.fireBookHeld = false;
+            player.iceBookHeld = false;
+            player.speedBookHeld = true;
             canAttack = false;
         }
         else if (speedChargeAmounts == 1 && player.speedBookHeld)
@@ -524,6 +560,10 @@ public class ProjectileAttack : MonoBehaviour
             player.earth3.SetActive(false);
             player.earthText.SetActive(false);
             player.earthBook.SetActive(false);
+            player.earthBookHeld = false;
+            player.fireBookHeld = false;
+            player.iceBookHeld = false;
+            player.speedBookHeld = true;
             canAttack = true;
         }
         else if (speedChargeAmounts == 2 && player.speedBookHeld)
@@ -548,6 +588,10 @@ public class ProjectileAttack : MonoBehaviour
             player.earth3.SetActive(false);
             player.earthText.SetActive(false);
             player.earthBook.SetActive(false);
+            player.earthBookHeld = false;
+            player.fireBookHeld = false;
+            player.iceBookHeld = false;
+            player.speedBookHeld = true;
             canAttack = true;
         }
         else if (speedChargeAmounts == 3 && player.speedBookHeld)
@@ -572,6 +616,10 @@ public class ProjectileAttack : MonoBehaviour
             player.earth3.SetActive(false);
             player.earthText.SetActive(false);
             player.earthBook.SetActive(false);
+            player.earthBookHeld = false;
+            player.fireBookHeld = false;
+            player.iceBookHeld = false;
+            player.speedBookHeld = true;
             canAttack = true;
         }
         if (speedChargeAmounts >= 4)
@@ -600,6 +648,10 @@ public class ProjectileAttack : MonoBehaviour
             player.earth3.SetActive(true);
             player.earthText.SetActive(true);
             player.earthBook.SetActive(true);
+            player.earthBookHeld = true;
+            player.fireBookHeld = false;
+            player.iceBookHeld = false;
+            player.speedBookHeld = false;
             canAttack = true;
         }
         else if (earthChargeAmounts == 2 && player.earthBookHeld)
@@ -624,6 +676,10 @@ public class ProjectileAttack : MonoBehaviour
             player.earth3.SetActive(false);
             player.earthText.SetActive(true);
             player.earthBook.SetActive(true);
+            player.earthBookHeld = true;
+            player.fireBookHeld = false;
+            player.iceBookHeld = false;
+            player.speedBookHeld = false;
             canAttack = true;
         }
         else if (earthChargeAmounts == 1 && player.earthBookHeld)
@@ -648,6 +704,10 @@ public class ProjectileAttack : MonoBehaviour
             player.earth3.SetActive(false);
             player.earthText.SetActive(true);
             player.earthBook.SetActive(true);
+            player.earthBookHeld = true;
+            player.fireBookHeld = false;
+            player.iceBookHeld = false;
+            player.speedBookHeld = false;
             canAttack = true;
         }
         else if (earthChargeAmounts == 0 && player.earthBookHeld)
@@ -672,7 +732,15 @@ public class ProjectileAttack : MonoBehaviour
             player.earth3.SetActive(false);
             player.earthText.SetActive(true);
             player.earthBook.SetActive(true);
+            player.earthBookHeld = true;
+            player.fireBookHeld = false;
+            player.iceBookHeld = false;
+            player.speedBookHeld = false;
             canAttack = false;
+        }
+        if (earthChargeAmounts >= 4)
+        {
+            earthChargeAmounts = 4;
         }
     }
 }
