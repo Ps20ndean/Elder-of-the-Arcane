@@ -7,17 +7,18 @@ using Microsoft.VisualBasic;
 
 public class Mail : MonoBehaviour
 {
- 
+    public GameObject reporting;
     void Update()
     {
         
     }
-    public static void SendMail(){
+    public void SendMail(){
         MailMessage mail = new MailMessage();
         SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
         mail.From = new MailAddress("EOTAError@gmail.com");
-        string email = UserReportingScript.email;
-        mail.To.Add(email);
+        var actualEmail = reporting.GetComponent<UserReportingScript>();
+        string emaill = actualEmail.email;
+        mail.To.Add(emaill);
         mail.Subject = "Crash Report";
         mail.Body = CrashReport.lastReport.ToString();
         SmtpServer.Port = 25;
@@ -25,7 +26,7 @@ public class Mail : MonoBehaviour
         SmtpServer.EnableSsl = true;
         try
         {
-            var addr = new System.Net.Mail.MailAddress(email);
+            var addr = new MailAddress(emaill);
             
         }
         catch
