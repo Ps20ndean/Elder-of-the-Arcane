@@ -15,7 +15,7 @@ public class Slime : EnemyAI
     new void Update()
     {
         Distance();
-        if (movement && inDist && !isJumping)
+        if (movement && inDist)
         {
             anime.SetBool("SlimeJump", true);
         }
@@ -27,6 +27,7 @@ public class Slime : EnemyAI
         if (myRigidBody.velocity.y != 0 && inDist && !isJumping)
         {
             myRigidBody.velocity = new Vector3(myRigidBody.velocity.x, 7.25f, 0);
+                
             isJumping = true;
             StartCoroutine(WaitJump());
         }
@@ -40,18 +41,20 @@ public class Slime : EnemyAI
     }
     IEnumerator WaitJump()
     {
-
-        if (isJumping)
+        if (movement)
         {
-            anime.enabled = true;
+            isJumping = true;
         }
-        else if (!isJumping)
+        else if (!movement)
         {
-            anime.enabled = false;
-            Debug.Log("Ugh");
+            isJumping = false;
         }
+        movement = true;
+        
         yield return new WaitForSeconds(2);
+        movement = false;
         isJumping = false;
+        anime.enabled = true;
     }
   
 }
