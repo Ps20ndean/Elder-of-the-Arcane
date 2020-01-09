@@ -13,13 +13,10 @@ using UnityEngine.UI;
 /// <summary>
 /// Represents a behavior for working with the user reporting client.
 /// </summary>
-/// <remarks>
-/// This script is provided as a sample and isn't necessarily the most optimal solution for your project.
-/// You may want to consider replacing with this script with your own script in the future.
-/// </remarks>
 public class UserReportingScript : MonoBehaviour
 {
     #region Constructors
+    String email;
 
     /// <summary>
     /// Creates a new instance of the <see cref="UserReportingScript"/> class.
@@ -278,6 +275,7 @@ public class UserReportingScript : MonoBehaviour
     /// <returns>A value indicating whether the user report is submitting.</returns>
     public bool IsSubmitting()
     {
+       email = this.SummaryInput.text;
         return this.isSubmitting;
     }
 
