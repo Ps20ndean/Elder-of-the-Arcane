@@ -15,7 +15,7 @@ public class Slime : EnemyAI
     new void Update()
     {
         Distance();
-        if (movement && inDist)
+        if (movement && inDist && !isJumping)
         {
             anime.SetBool("SlimeJump", true);
         }
