@@ -197,8 +197,7 @@ public class UserReportingScript : MonoBehaviour
 
     private void ClearForm()
     {
-        this.SummaryInput.text = null;
-        this.DescriptionInput.text = null;
+      
     }
 
     /// <summary>
