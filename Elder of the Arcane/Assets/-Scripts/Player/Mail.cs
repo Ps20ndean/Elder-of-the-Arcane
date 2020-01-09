@@ -16,15 +16,24 @@ public class Mail : MonoBehaviour
         MailMessage mail = new MailMessage();
         SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
         mail.From = new MailAddress("EOTAError@gmail.com");
-        
-        mail.To.Add("Ps20jklausman@efcts.us");
+        string email = UserReportingScript.email;
+        mail.To.Add(email);
         mail.Subject = "Crash Report";
         mail.Body = CrashReport.lastReport.ToString();
         SmtpServer.Port = 25;
         SmtpServer.Credentials = new System.Net.NetworkCredential("EOTAError@gmail.com", "EOTA824019");
         SmtpServer.EnableSsl = true;
+        try
+        {
+            var addr = new System.Net.Mail.MailAddress(email);
+            
+        }
+        catch
+        {
+            return;
+        }
+        SmtpServer.Send(mail);
        
 
-        SmtpServer.Send(mail);
     }
 }

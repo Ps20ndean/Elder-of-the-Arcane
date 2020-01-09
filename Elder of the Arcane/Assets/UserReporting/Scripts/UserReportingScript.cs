@@ -16,7 +16,7 @@ using UnityEngine.UI;
 public class UserReportingScript : MonoBehaviour
 {
     #region Constructors
-    String email;
+   public static String email;
 
     /// <summary>
     /// Creates a new instance of the <see cref="UserReportingScript"/> class.
