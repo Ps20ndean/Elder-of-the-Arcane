@@ -16,8 +16,8 @@ using UnityEngine.UI;
 /// 
 public class UserReportingScript : MonoBehaviour
 {
-    private GameObject mail;
     #region Constructors
+    private GameObject mail;
     public string email;
     
 
@@ -297,6 +297,7 @@ public class UserReportingScript : MonoBehaviour
     private void Start()
     {
         mail = GameObject.Find("Logger");
+        Debug.Log("Mail : " + mail);
         // Set Up Event System
         if (Application.isPlaying)
         {
@@ -388,8 +389,7 @@ public class UserReportingScript : MonoBehaviour
             if (this.ProgressText != null)
             {
                 string progressText = string.Format("{0:P}", uploadProgress);
-                var realMail = mail.GetComponent<Mail>();
-                realMail.SendMail();
+               
                 this.ProgressText.text = progressText;
             }
         }, (success, br2) =>
@@ -399,7 +399,9 @@ public class UserReportingScript : MonoBehaviour
                 this.isShowingError = true;
                 this.StartCoroutine(this.ClearError());
             }
-
+            var realMail = mail.GetComponent<Mail>();
+            Debug.Log("RealMail : " + realMail);
+            realMail.SendMail();
             this.CurrentUserReport = null;
             this.isSubmitting = false;
         });
