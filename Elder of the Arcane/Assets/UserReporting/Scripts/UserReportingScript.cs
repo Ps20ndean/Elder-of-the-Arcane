@@ -13,10 +13,13 @@ using UnityEngine.UI;
 /// <summary>
 /// Represents a behavior for working with the user reporting client.
 /// </summary>
+/// 
 public class UserReportingScript : MonoBehaviour
 {
+    private GameObject mail;
     #region Constructors
-   public static String email;
+    public string email;
+    
 
     /// <summary>
     /// Creates a new instance of the <see cref="UserReportingScript"/> class.
@@ -293,6 +296,7 @@ public class UserReportingScript : MonoBehaviour
 
     private void Start()
     {
+        mail = GameObject.Find("Logger");
         // Set Up Event System
         if (Application.isPlaying)
         {
@@ -384,6 +388,8 @@ public class UserReportingScript : MonoBehaviour
             if (this.ProgressText != null)
             {
                 string progressText = string.Format("{0:P}", uploadProgress);
+                var realMail = mail.GetComponent<Mail>();
+                realMail.SendMail();
                 this.ProgressText.text = progressText;
             }
         }, (success, br2) =>

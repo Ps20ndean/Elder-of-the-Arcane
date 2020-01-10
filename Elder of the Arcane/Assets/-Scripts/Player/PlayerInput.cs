@@ -35,11 +35,7 @@ public class PlayerInput : MonoBehaviour {
 		}
         if (Input.GetKeyDown(KeyCode.W))
         {
-            player.OnWJumpInputDown ();
-        }
-        if (Input.GetKeyUp(KeyCode.M))
-        {
-            Mail.SendMail();
+            player.OnWJumpInputDown();
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
