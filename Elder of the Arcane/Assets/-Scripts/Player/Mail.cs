@@ -19,12 +19,12 @@ public class Mail : MonoBehaviour
         Debug.Log("Reporting : " + reporting);
         var actualEmail = reporting.GetComponent<UserReportingScript>();
         Debug.Log("actualEmail : " + actualEmail);
-        string emaill = actualEmail.email;
+        string emaill = actualEmail.email_text.text;
         mail.To.Add(emaill);
         mail.Subject = "Crash Report";
-        mail.Body = CrashReport.lastReport.ToString();
+        mail.Body = "crash report fix later";
         SmtpServer.Port = 25;
-        SmtpServer.Credentials = new System.Net.NetworkCredential("EOTAError@gmail.com", "EOTA08242019");
+        SmtpServer.Credentials = new System.Net.NetworkCredential("EOTA.Error@gmail.com", "EOTA08242019");
         SmtpServer.EnableSsl = true;
         try
         {
