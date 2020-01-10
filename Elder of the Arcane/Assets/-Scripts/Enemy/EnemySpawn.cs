@@ -1,30 +1,38 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class EnemySpawn : MonoBehaviour
+public class EnemySpawn : EnemyAI
 {
-    public float TheNumber;
+    public float maxClones;
     public GameObject enemy;
-    float randX;
     Vector2 whereToSpawn;
     public Transform overallEnemies;
-    public float spawnRate = 2f;
+    public float cloneCount = 0f;
 
-    void Start()
+    public new void Start()
     {
-        
+        //On start, begin tracking player position
+        enemyParameterCheck();
     }
 
-    void Update()
+    public new void Update()
     {
-        if(Time.time > TheNumber)
+        //Every tick, use tracked player position and position of object to determine if in range
+        Distance();
+        //If player is alive
+        if (target)
         {
-            TheNumber = Time.time + spawnRate;
-            randX = Random.Range(-8.4f, 8.4f);
-            whereToSpawn = new Vector2(randX, transform.position.y);
-            var clone = Instantiate(enemy, whereToSpawn, Quaternion.identity);
-            clone.transform.parent = overallEnemies;
+            //If within distance
+            if (inDist)
+            {
+                //if max number of clones is greater than the clone count, spawn a clone and increase clone count
+                if (maxClones > cloneCount)
+                {
+                    whereToSpawn = new Vector2(transform.position.x, transform.position.y);
+                    var clone = Instantiate(enemy, whereToSpawn, Quaternion.identity);
+                    cloneCount++;
+                    clone.transform.parent = overallEnemies;
+                }
+            }
         }   
     }
 }
