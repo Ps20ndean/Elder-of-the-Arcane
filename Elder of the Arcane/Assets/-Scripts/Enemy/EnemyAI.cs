@@ -99,7 +99,9 @@ public class EnemyAI : HealthBar
             {
                 player.GetComponent<HealthManager>().Damage(PlayerDamage);
                 startInvinc(20);
-                
+                movement = false;
+                WaitMov(1f);
+                movement = true;
             }
 
             if (collision.gameObject.tag == "FireBall")
