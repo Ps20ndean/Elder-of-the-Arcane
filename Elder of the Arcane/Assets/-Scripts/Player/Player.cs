@@ -319,10 +319,17 @@ public class Player : MonoBehaviour
         //Read the text from directly from the test.txt file
         StreamReader reader = new StreamReader(path);
         savefile = reader.ReadToEnd();
+        if (savefile != null){ 
         char[] b = savefile.ToCharArray();
         PlayerHealth = b[0] * 100 + b[1] * 10 + b[2];
         sceneInt = b[3] - 48;
         scoreInt = b[4] * 10000 + b[5] * 1000 + b[6] * 100 + b[7] * 10 + b[8];
+    }   else
+        {
+            PlayerHealth = 250;
+            sceneInt = 1;
+            scoreInt = 0;
+        }
 
 
     }
