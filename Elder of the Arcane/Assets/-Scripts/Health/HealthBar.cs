@@ -87,6 +87,23 @@ public class HealthBar : HealthManager
             healthBars.transform.localScale = healthBar;
             healthBarsBackground.transform.localScale = healthBarsBackgroundScale;
         }
+        if (gameObject.tag == "King Slime")
+        {
+            healthBar.y = 25f;
+            healthBarsBackgroundScale.y = 20f;
+            healthBar.x = health * 1.5f;
+            healthBars.transform.localScale = healthBar;
+            healthBarsBackground.transform.localScale = healthBarsBackgroundScale;
+        }
+        if (gameObject.tag == "Spicy Boi")
+        {
+            healthBar.y = 25f;
+            healthBarsBackgroundScale.y = 20f;
+            healthBar.x = health * 10f;
+            healthBarsBackgroundScale.x = healthMax * 10f;
+            healthBars.transform.localScale = healthBar;
+            healthBarsBackground.transform.localScale = healthBarsBackgroundScale;
+        }
         //if its the player
         if (gameObject.tag == "Player")
         {

@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 3384093890150892204}
   - component: {fileID: 1948925934832502628}
   - component: {fileID: 3666548534181610807}
+  - component: {fileID: 5273401181890693339}
   - component: {fileID: 4572376085017805238}
   m_Layer: 10
   m_Name: Eye Demon
@@ -295,6 +296,39 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &5273401181890693339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3666548534181610806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13e9e3b013a96dc45884a5ab2178293e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  healthMax: 100
+  healthBar: {x: 0, y: 0, z: 0}
+  overallHealthBar: {fileID: 6465091843588339299}
+  healthBars: {fileID: 3540156202253972385}
+  healthBarsBackground: {fileID: 4910804913286949057}
+  healthBarsBackgroundScale: {x: 0, y: 0, z: 0}
+  movement: 1
+  movementSpeed: 2
+  stoppingDistance: 13
+  facingRight: 1
+  canJump: 1
+  myRigidBody: {fileID: 0}
+  anime: {fileID: 0}
+  target: {fileID: 0}
+  player: {fileID: 0}
+  velocity: {x: 0, y: 0, z: 0}
+  isJumping: 0
+  dist: 0
+  inDist: 0
+  intFacingRight: 0
 --- !u!95 &4572376085017805238
 Animator:
   serializedVersion: 3

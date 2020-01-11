@@ -16,9 +16,12 @@ public class Level2 : MonoBehaviour
 
     private void Update()
     {
-        CheckCollision();
+        if (GameObject.Find("King Slime") == null)
+        {
+            CheckCollision();
+        }
         
-}
+    }
 
     private void CheckCollision()
     {

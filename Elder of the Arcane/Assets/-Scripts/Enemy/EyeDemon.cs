@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class eyeDemon : EnemyAI
+public class EyeDemon : EnemyAI
 {
 
     new void Start()
@@ -15,7 +15,7 @@ public class eyeDemon : EnemyAI
     new void Update()
     {
         Distance();
-         if (!inDist)
+        if (!inDist)
         {
             anime.SetBool("Chase", false);
         }
