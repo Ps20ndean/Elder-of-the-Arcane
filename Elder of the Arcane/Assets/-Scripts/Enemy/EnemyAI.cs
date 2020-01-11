@@ -64,10 +64,6 @@ public class EnemyAI : HealthBar
 
                transform.position = Vector2.MoveTowards(transform.position, target.position, movementSpeed * Time.deltaTime);
             }
-            else if (!inDist)
-            {
-
-            }
 
             if ((target.position.x < transform.position.x) && facingRight == true && inDist)
             {
