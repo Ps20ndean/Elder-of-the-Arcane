@@ -146,8 +146,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1893d2666cba3314a8d3a91edcba28a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  healthMax: 100
+  health: 50
+  healthMax: 50
 --- !u!114 &7314402966340808023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,15 +213,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51ebbd6bc5b8e364d9511a37aa07fb42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  healthMax: 100
+  health: 50
+  healthMax: 50
   healthBar: {x: 0, y: 0, z: 0}
   overallHealthBar: {fileID: 1818135814109188550}
   healthBars: {fileID: 1818321855951924440}
   healthBarsBackground: {fileID: 1818172928713862448}
   healthBarsBackgroundScale: {x: 0, y: 0, z: 0}
   movement: 1
-  movementSpeed: 1.25
+  movementSpeed: 1.5
   stoppingDistance: 13
   facingRight: 0
   canJump: 1
@@ -320,27 +320,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 212330782697277028, guid: 01a6b42a1d84b664c890d8dcb066becd,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 3ba68568779e2744c96d3ef64afe4663,
-        type: 3}
-    - target: {fileID: 212330782697277028, guid: 01a6b42a1d84b664c890d8dcb066becd,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 212330782697277028, guid: 01a6b42a1d84b664c890d8dcb066becd,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 212330782697277028, guid: 01a6b42a1d84b664c890d8dcb066becd,
-        type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 212259403350062198, guid: 01a6b42a1d84b664c890d8dcb066becd,
         type: 3}
       propertyPath: m_Sprite
@@ -358,6 +337,27 @@ PrefabInstance:
       value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 212259403350062198, guid: 01a6b42a1d84b664c890d8dcb066becd,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212330782697277028, guid: 01a6b42a1d84b664c890d8dcb066becd,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3ba68568779e2744c96d3ef64afe4663,
+        type: 3}
+    - target: {fileID: 212330782697277028, guid: 01a6b42a1d84b664c890d8dcb066becd,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 212330782697277028, guid: 01a6b42a1d84b664c890d8dcb066becd,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 212330782697277028, guid: 01a6b42a1d84b664c890d8dcb066becd,
         type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
