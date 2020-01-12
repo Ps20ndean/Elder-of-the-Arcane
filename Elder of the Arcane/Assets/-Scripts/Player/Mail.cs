@@ -1,37 +1,18 @@
-﻿using System.ComponentModel;
-using System.IO;
-using System.Net;
-using System.Net.Mail;
+﻿using System.IO;
+using UnityEngine.Networking;
 using UnityEngine;
+using System.Net.Mail;
 
 public class Mail : MonoBehaviour
 {
     public GameObject reporting;
     private UserReportingScript actualEmail;
-    private SmtpClient SmtpServer;
-    private MailMessage mail = new MailMessage();
+    private UnityWebRequest web;
     private bool IsSending;
 
     private void Awake()
     {
         actualEmail = reporting.GetComponent<UserReportingScript>();
-
-        SmtpServer = new SmtpClient("smtp.gmail.com")
-        {
-            Port = 587,
-            Credentials = new NetworkCredential("eota.error@gmail.com", "EOTA08242019"),
-            EnableSsl = true,
-            DeliveryMethod = SmtpDeliveryMethod.Network,
-            UseDefaultCredentials = false,
-        };
-
-        SmtpServer.SendCompleted += SendFinished;
-    }
-
-    private void OnDisable()
-    {
-        SmtpServer.SendCompleted -= SendFinished;
-        SmtpServer.Dispose();
     }
 
     public void SendMail()
@@ -48,19 +29,19 @@ public class Mail : MonoBehaviour
        
         try
         {
-            string email = actualEmail.email_text.text;
-            MailAddress addr = new MailAddress(email);
-            mail.To.Clear();
+            MailAddress email = new MailAddress(actualEmail.email_text.text);
+            //string path = "Logs/Log.txt";
+            //StreamReader reader = new StreamReader(path);
+            //web.SetRequestHeader("body", reader.ReadToEnd());
+            //reader.Close();
+            WWWForm form = new WWWForm();
+            form.AddField("address", email.Address);
+            form.AddField("subject", "Crash Report");
+            form.AddField("email_body", "Test Email");
 
-            string path = "Logs/Log.txt";
-            StreamReader reader = new StreamReader(path);
-
-            mail.From = new MailAddress("Elder of The Arcane <eota.error@gmail.com>");
-            mail.To.Add(addr);
-            mail.Subject = "Crash Report";
-            //mail.Body = reader.ReadToEnd();
-            mail.Body = "Test Email";
-            reader.Close();
+            web = UnityWebRequest.Post("http://ts.jaytechmedia.com:4096/smtp/send", form);
+            UnityWebRequestAsyncOperation request = web.SendWebRequest();
+            request.completed += SendFinished;
         }
         catch
         {
@@ -68,25 +49,18 @@ public class Mail : MonoBehaviour
             Debug.LogWarning("Not an actual email address.");
             return;
         }
-        SmtpServer.SendMailAsync(mail);
     }
 
-    private void SendFinished(object sender, AsyncCompletedEventArgs e)
+    private void SendFinished(AsyncOperation operation)
     {
-        if (e.Cancelled)
+        if(web.responseCode == 200)
         {
-            Debug.LogWarning("Cancelled Sending Email.");
-        }
-        else if (e.Error != null)
-        {
-            Debug.LogWarning("Error Sending Email : " + e.Error.Message);
-            Debug.LogWarning(e.Error.ToString());
+            Debug.Log("Mail Sent Successfully!");
         }
         else
         {
-            Debug.Log("Email sent!");
+            Debug.LogWarning("SendMail Error, Server Returned : " + web.responseCode + " : " + web.ToString());
         }
-
         IsSending = false;
     }
 
