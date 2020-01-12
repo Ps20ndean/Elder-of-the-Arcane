@@ -9,6 +9,7 @@ public class Mail : MonoBehaviour
     public GameObject reporting;
     private UserReportingScript actualEmail;
     private SmtpClient SmtpServer;
+    private MailMessage mail = new MailMessage();
     private bool IsSending;
 
     private void Awake()
@@ -17,12 +18,21 @@ public class Mail : MonoBehaviour
 
         SmtpServer = new SmtpClient("smtp.gmail.com")
         {
-            Port = 465,
-            Credentials = new NetworkCredential("EOTA.Error@gmail.com", "EOTA08242019"),
-            EnableSsl = true
+            Port = 587,
+            Credentials = new NetworkCredential("eota.error@gmail.com", "EOTA08242019"),
+            EnableSsl = true,
+            DeliveryMethod = SmtpDeliveryMethod.Network,
+            UseDefaultCredentials = false,
         };
+
+        SmtpServer.SendCompleted += SendFinished;
     }
 
+    private void OnDisable()
+    {
+        SmtpServer.SendCompleted -= SendFinished;
+        SmtpServer.Dispose();
+    }
 
     public void SendMail()
     {
@@ -34,21 +44,23 @@ public class Mail : MonoBehaviour
 
         IsSending = true;
 
-        MailMessage mail = new MailMessage();
-        mail.From = new MailAddress("EOTA.Error@gmail.com");
-        string email = actualEmail.email_text.text;
-        mail.To.Add(email);
-        mail.Subject = "Crash Report";
-        string path = "Logs/Log.txt";
-        StreamReader reader = new StreamReader(path);
-        //mail.Body = reader.ReadToEnd();
-        mail.Body = "Test Email";
-        reader.Close();
+
        
         try
         {
-            var addr = new MailAddress(email);
+            string email = actualEmail.email_text.text;
+            MailAddress addr = new MailAddress(email);
+            mail.To.Clear();
 
+            string path = "Logs/Log.txt";
+            StreamReader reader = new StreamReader(path);
+
+            mail.From = new MailAddress("Elder of The Arcane <eota.error@gmail.com>");
+            mail.To.Add(addr);
+            mail.Subject = "Crash Report";
+            //mail.Body = reader.ReadToEnd();
+            mail.Body = "Test Email";
+            reader.Close();
         }
         catch
         {
@@ -56,7 +68,6 @@ public class Mail : MonoBehaviour
             Debug.LogWarning("Not an actual email address.");
             return;
         }
-        SmtpServer.SendCompleted += SendFinished;
         SmtpServer.SendMailAsync(mail);
     }
 
