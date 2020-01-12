@@ -26,12 +26,13 @@ config :smtp_server, SmtpServerWeb.Mailer,
   adapter: Swoosh.Adapters.SMTP,
   relay: "smtp.gmail.com",
   username: "eota.error@gmail.com",
-  password: "EOTA08242019",
-  ssl: true,
-  tls: :always,
-  auth: :if_available,
+  #password: "EOTA08242019",
+  password: "fgkbzypaaruggdds",
+  ssl: false,
+  tls: :if_available,
+  auth: :always,
   port: 587,
-  retries: 2
+  retries: 1
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
