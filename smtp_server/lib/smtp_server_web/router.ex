@@ -5,7 +5,7 @@ defmodule SmtpServerWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", SmtpServerWeb do
+  scope "/smtp", SmtpServerWeb do
     pipe_through :api
 
     post "/send", MailerController, :send

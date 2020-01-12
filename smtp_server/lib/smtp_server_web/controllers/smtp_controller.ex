@@ -1,12 +1,11 @@
 defmodule SmtpServerWeb.MailerController do
   use SmtpServerWeb, :controller
 
-  def send(conn, params) do
-    IO.inspect params
-
+  def send(conn, %{"address" => address, "email_body" => email_body, "subject" => subject} = _params) do
     sent_email =
-    SmtpServerWeb.Email.make_crash_email("Test Name", "jaytechmedia@googlemail.com", "Crash Report", "The body of the email!")
+    SmtpServerWeb.Email.make_crash_email("EotA Player", address, subject, email_body)
     |> SmtpServerWeb.Mailer.deliver()
+    |> IO.inspect
 
     case sent_email do
       {:ok, _email} ->  send_resp(conn, 200, "")

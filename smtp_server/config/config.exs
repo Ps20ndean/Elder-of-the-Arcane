@@ -22,7 +22,7 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
-config :sample, SmtpServerWeb.Mailer,
+config :smtp_server, SmtpServerWeb.Mailer,
   adapter: Swoosh.Adapters.SMTP,
   relay: "smtp.gmail.com",
   username: "eota.error@gmail.com",
