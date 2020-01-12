@@ -26,7 +26,7 @@ public class Mail : MonoBehaviour
         string path = "Logs/Log.txt";
         //Read the text from directly from the Log.txt file
         StreamReader reader = new StreamReader(path);
-        mail.Body = reader.ReadToEnd();
+         mail.Body = reader.ReadToEnd();
         reader.Close();
         SmtpServer.Port = 25;
         SmtpServer.Credentials = new System.Net.NetworkCredential("EOTA.Error@gmail.com", "EOTA08242019");
