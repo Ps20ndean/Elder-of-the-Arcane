@@ -1,47 +1,82 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System.ComponentModel;
+using System.IO;
 using System.Net;
 using System.Net.Mail;
-using Microsoft.VisualBasic;
-using System.IO;
+using UnityEngine;
 
 public class Mail : MonoBehaviour
 {
     public GameObject reporting;
-    void Update()
+    private UserReportingScript actualEmail;
+    private SmtpClient SmtpServer;
+    private bool IsSending;
+
+    private void Awake()
     {
-        
+        actualEmail = reporting.GetComponent<UserReportingScript>();
+
+        SmtpServer = new SmtpClient("smtp.gmail.com")
+        {
+            Port = 465,
+            Credentials = new NetworkCredential("EOTA.Error@gmail.com", "EOTA08242019"),
+            EnableSsl = true
+        };
     }
-    public void SendMail(){
+
+
+    public void SendMail()
+    {
+        if (IsSending)
+        {
+            Debug.LogWarning("Tried to send mail, when the SMTPClient was sending mail.");
+            return;
+        }
+
+        IsSending = true;
+
         MailMessage mail = new MailMessage();
-        SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
-        mail.From = new MailAddress("EOTAError@gmail.com");
-        Debug.Log("Reporting : " + reporting);
-        var actualEmail = reporting.GetComponent<UserReportingScript>();
-        Debug.Log("actualEmail : " + actualEmail);
-        string emaill = actualEmail.email_text.text;
-        mail.To.Add(emaill);
+        mail.From = new MailAddress("EOTA.Error@gmail.com");
+        string email = actualEmail.email_text.text;
+        mail.To.Add(email);
         mail.Subject = "Crash Report";
         string path = "Logs/Log.txt";
-        //Read the text from directly from the Log.txt file
         StreamReader reader = new StreamReader(path);
-         mail.Body = reader.ReadToEnd();
+        //mail.Body = reader.ReadToEnd();
+        mail.Body = "Test Email";
         reader.Close();
-        SmtpServer.Port = 25;
-        SmtpServer.Credentials = new System.Net.NetworkCredential("EOTA.Error@gmail.com", "EOTA08242019");
-        SmtpServer.EnableSsl = true;
+       
         try
         {
-            var addr = new MailAddress(emaill);
-            
+            var addr = new MailAddress(email);
+
         }
         catch
         {
+            IsSending = false;
+            Debug.LogWarning("Not an actual email address.");
             return;
         }
-        SmtpServer.Send(mail);
-       
-
+        SmtpServer.SendCompleted += SendFinished;
+        SmtpServer.SendMailAsync(mail);
     }
+
+    private void SendFinished(object sender, AsyncCompletedEventArgs e)
+    {
+        if (e.Cancelled)
+        {
+            Debug.LogWarning("Cancelled Sending Email.");
+        }
+        else if (e.Error != null)
+        {
+            Debug.LogWarning("Error Sending Email : " + e.Error.Message);
+            Debug.LogWarning(e.Error.ToString());
+        }
+        else
+        {
+            Debug.Log("Email sent!");
+        }
+
+        IsSending = false;
+    }
+
 }
