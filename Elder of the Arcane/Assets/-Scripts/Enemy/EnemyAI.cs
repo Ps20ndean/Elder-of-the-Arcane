@@ -129,4 +129,8 @@ public class EnemyAI : HealthBar
         anime = GetComponent<Animator>();
         myRigidBody = GetComponent<Rigidbody2D>();
     }
+    public IEnumerator Wait(float delayInSecs)
+    {
+        yield return new WaitForSecondsRealtime(delayInSecs);
+    }
 }

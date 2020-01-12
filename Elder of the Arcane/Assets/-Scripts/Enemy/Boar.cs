@@ -44,8 +44,4 @@ public class Boar : EnemyAI
     {
         TakeDamage(30, 15, 20, 20, collision);
     }
-    public IEnumerator Wait(float delayInSecs)
-    {
-        yield return new WaitForSecondsRealtime(delayInSecs);
-    }
 }
