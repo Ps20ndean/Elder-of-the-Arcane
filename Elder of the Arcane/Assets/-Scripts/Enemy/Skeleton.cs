@@ -27,9 +27,6 @@ public class Skeleton : EnemyAI
             //Checking if skeleton is close enough to attack, else keep moving
             if (attackingDist >= dist)
             {
-                //restrict movement abilities of skeleton while swinging sword
-                movement = false;
-                canJump = false;
                 //play skeleton attacking animation
                 anime.SetBool("Attacking", true);
             }
@@ -56,6 +53,6 @@ public class Skeleton : EnemyAI
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        TakeDamage(30, 15, 20, 20, collision);
+        TakeDamage(30, 15, 120, 20, collision);
     }
 }

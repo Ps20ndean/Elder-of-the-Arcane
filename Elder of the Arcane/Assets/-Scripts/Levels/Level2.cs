@@ -10,9 +10,14 @@ using System.IO;
 public class Level2 : MonoBehaviour
 {
     private GameObject player;
-    private static Player playercomp;
+    private static Player playerComp;
     public GameObject tavernText;
     private bool ableTo = false;
+
+    private void Start()
+    {
+        player = GameObject.Find("Player");
+    }
 
     private void Update()
     {
@@ -35,13 +40,14 @@ public class Level2 : MonoBehaviour
                 {
                     SceneManager.LoadScene("Menu");
                 }
-                else if (currentScene.name == "Level1") { 
-                SceneManager.LoadScene("Level2");
+                else if (currentScene.name == "Level1")
+                {
+                    SceneManager.LoadScene("Level2");
                 } else if (currentScene.name == "Level2")
                 {
                     SceneManager.LoadScene("Level3");
                 }
-                playercomp.SavePlayer();
+                playerComp.SavePlayer();
             }
         }
     }

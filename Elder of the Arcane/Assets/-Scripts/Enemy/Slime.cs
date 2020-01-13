@@ -35,8 +35,18 @@ public class Slime : EnemyAI
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
-        TakeDamage(30, 15, 25, 10, collision);
+        if (gameObject.tag == "King Slime")
+        {
+            TakeDamage(30, 15, 64, 10, collision);
+        }
+        if (gameObject.tag == "Slime")
+        {
+            TakeDamage(30, 15, 25, 10, collision);
+        }
+        if (gameObject.tag == "Large Slime")
+        {
+            TakeDamage(30, 15, 50, 10, collision);
+        }
     }
     IEnumerator WaitJump()
     {

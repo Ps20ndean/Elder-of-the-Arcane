@@ -547,7 +547,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 62b54ef3f04619c48ad7ef253a2fad9b, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.15
   m_Pitch: 1.41
   Loop: 0
   Mute: 0
@@ -801,7 +801,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 19c6bde221360ed40b437432ec187c54, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.15
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -10558,10 +10558,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 822633960989871289}
     m_Modifications:
-    - target: {fileID: 1473727354331688, guid: 01a6b42a1d84b664c890d8dcb066becd, type: 3}
-      propertyPath: m_Name
-      value: HealthBar
-      objectReference: {fileID: 0}
     - target: {fileID: 4090514546342678, guid: 01a6b42a1d84b664c890d8dcb066becd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.05
@@ -10605,6 +10601,10 @@ PrefabInstance:
     - target: {fileID: 4090514546342678, guid: 01a6b42a1d84b664c890d8dcb066becd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1473727354331688, guid: 01a6b42a1d84b664c890d8dcb066becd, type: 3}
+      propertyPath: m_Name
+      value: HealthBar
       objectReference: {fileID: 0}
     - target: {fileID: 4497247268064488, guid: 01a6b42a1d84b664c890d8dcb066becd, type: 3}
       propertyPath: m_LocalScale.x

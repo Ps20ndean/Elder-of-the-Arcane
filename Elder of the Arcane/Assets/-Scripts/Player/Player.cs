@@ -96,6 +96,10 @@ public class Player : MonoBehaviour
         {
             sceneInt = 1;
         }
+        if (sceneName == "Level2")
+        {
+
+        }
 
         anime = GetComponent<Animator>();
         fireBookHeld = true;
@@ -106,6 +110,10 @@ public class Player : MonoBehaviour
         maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
         minJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(gravity) * minJumpHeight);
 
+        if (sceneName == "Level2")
+        {
+            iceUnlocked = true;
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
