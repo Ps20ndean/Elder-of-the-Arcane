@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.UI;
+using System.IO;
     [RequireComponent(typeof(EnemyController))]
 public class EnemyAI : HealthBar
 {
@@ -108,9 +109,18 @@ public class EnemyAI : HealthBar
             {
                 GetComponent<HealthManager>().Damage(IceDamage);
             }
+            string path = "Logs/EventLog.txt";
             if (gameObject.GetComponent<HealthManager>().health <= 0)
             {
                 playerComp.scoreInt += AddScore;
+                if (gameObject.tag == "King Slime") {
+                    File.AppendAllText(path, " King Slime Killed");
+                } else if (gameObject.tag == " SkellyBoss") { 
+                    File.AppendAllText(path, " Skeleton Boss Killed");
+                } else
+                {
+                    File.AppendAllText(path, " Enemy Killed");
+                }
             }
         }
     }

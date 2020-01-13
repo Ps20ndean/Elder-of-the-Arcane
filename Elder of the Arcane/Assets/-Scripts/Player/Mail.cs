@@ -32,7 +32,6 @@ public class Mail : MonoBehaviour
             MailAddress email = new MailAddress(actualEmail.email_text.text);
             //string path = "Logs/Log.txt";
             //StreamReader reader = new StreamReader(path);
-            //web.SetRequestHeader("body", reader.ReadToEnd());
             //reader.Close();
             WWWForm form = new WWWForm();
             form.AddField("address", email.Address);

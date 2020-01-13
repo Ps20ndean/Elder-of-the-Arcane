@@ -95,10 +95,25 @@ public class Player : MonoBehaviour
         if (sceneName == "Level1")
         {
             sceneInt = 1;
+            string path = "Logs/EventLog.txt";
+            File.AppendAllText(path, " Entered Level 1");
+            SavePlayer();
         }
         if (sceneName == "Level2")
         {
-
+            sceneInt = 2;
+            iceUnlocked = true;
+            string path = "Logs/EventLog.txt";
+            File.AppendAllText(path, " Entered Level 2");
+            SavePlayer();
+        }
+        if (sceneName == "Level3")
+        {
+            sceneInt = 3;
+            iceUnlocked = true;
+            string path = "Logs/EventLog.txt";
+            File.AppendAllText(path, " Entered Level 3");
+            SavePlayer();
         }
 
         anime = GetComponent<Animator>();
@@ -109,11 +124,6 @@ public class Player : MonoBehaviour
         gravity = -(2 * maxJumpHeight) / Mathf.Pow(timeToJumpApex, 2);
         maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
         minJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(gravity) * minJumpHeight);
-
-        if (sceneName == "Level2")
-        {
-            iceUnlocked = true;
-        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -264,6 +274,8 @@ public class Player : MonoBehaviour
     }
     public void Dead()
     {
+        string path = "Logs/EventLog.txt";
+        File.AppendAllText(path, " Player Died");
         SceneManager.LoadScene("GameOver");
         fire1.SetActive(false);
         fire2.SetActive(false);
@@ -278,7 +290,9 @@ public class Player : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         if ((currentScene.name != "Tutorial")|| (currentScene.name != "Menu"))
         {
-            string path = "SaveFile/Save.txt";
+            string path = "Logs/EventLog.txt";
+            File.AppendAllText(path, " Player Saved");
+            path = "SaveFile/Save.txt";
             player = GameObject.Find("Player");
             var playerComp = player.GetComponent<Player>();
             String saveNumber;
@@ -311,6 +325,7 @@ public class Player : MonoBehaviour
             {
                 saveNumber += scoreInt;
             }
+            Debug.Log(saveNumber);
 
 
             string createText = saveNumber + Environment.NewLine;
