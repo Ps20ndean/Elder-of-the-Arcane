@@ -17,27 +17,27 @@ public class Boar : EnemyAI
         Distance();
         
         if (target) { 
-        if (movement && inDist)
-        {
-            anime.SetBool("Attacking", true);
-            transform.position = Vector2.MoveTowards(transform.position, target.position, movementSpeed * Time.deltaTime);
-        } else
-        {
-            anime.SetBool("Attacking", false);
-        }
+            if (movement && inDist)
+            {
+                anime.SetBool("Attacking", true);
+                transform.position = Vector2.MoveTowards(transform.position, target.position, movementSpeed * Time.deltaTime);
+            } else
+            {
+                anime.SetBool("Attacking", false);
+            }
 
-        if ((target.position.x < transform.position.x) && facingRight == true && inDist)
-        {
-            transform.Rotate(Vector3.up * 180);
-            facingRight = false;
-            Wait(1);
-        }
-        else if ((target.position.x > transform.position.x) && facingRight == false && inDist)
-        {
-            transform.Rotate(Vector3.up * 180);
-            facingRight = true;
-            Wait(1);
-        }
+            if ((target.position.x < transform.position.x) && facingRight == true && inDist)
+            {
+                transform.Rotate(Vector3.up * 180);
+                facingRight = false;
+                WaitMov(1f);
+            }
+            else if ((target.position.x > transform.position.x) && facingRight == false && inDist)
+            {
+                transform.Rotate(Vector3.up * 180);
+                facingRight = true;
+                WaitMov(1f);
+            }
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
