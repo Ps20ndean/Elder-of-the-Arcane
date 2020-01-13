@@ -27,11 +27,11 @@ public class Skeleton : EnemyAI
             //Checking if skeleton is close enough to attack, else keep moving
             if (attackingDist >= dist)
             {
-                //set walking parameter to false
-                anime.SetBool("Walking", false);
+                //restrict movement abilities of skeleton while swinging sword
+                movement = false;
+                canJump = false;
                 //play skeleton attacking animation
                 anime.SetBool("Attacking", true);
-               
             }
             else
             {
@@ -56,7 +56,6 @@ public class Skeleton : EnemyAI
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //indicate damage received or given during collision
-        TakeDamage(30, 15, 120, 20, collision);
+        TakeDamage(30, 15, 20, 20, collision);
     }
 }
