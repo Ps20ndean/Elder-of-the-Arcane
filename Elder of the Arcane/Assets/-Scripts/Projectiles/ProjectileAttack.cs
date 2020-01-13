@@ -113,7 +113,7 @@ public class ProjectileAttack : MonoBehaviour
         bice.GetComponent<Rigidbody2D>().AddForce(transform.up * -1);
         bice2.GetComponent<Rigidbody2D>().AddForce(transform.up * -1);
         bice3.GetComponent<Rigidbody2D>().AddForce(transform.up * -1);
-
+        iceSource.Play();
         StartCoroutine(RechargeIce());
 
 

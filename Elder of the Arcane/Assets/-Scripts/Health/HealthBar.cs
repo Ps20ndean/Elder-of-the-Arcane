@@ -30,7 +30,7 @@ public class HealthBar : HealthManager
 
     public void checkHealthBars()
     {
-        if (gameObject.tag == "Slime")
+        if (gameObject.tag == "Slime" || gameObject.tag == "Large Slime")
         {
             healthBar.y = 25f;
             healthBarsBackgroundScale.y = 20f;
