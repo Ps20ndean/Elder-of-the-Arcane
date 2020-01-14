@@ -19,43 +19,65 @@ public class EnemyController : MonoBehaviour
 
     void Start()
     {
+        // collider is set to the boxcollider component
         collider = GetComponent<BoxCollider2D>();
+
+        // runs the method calculate ray spacing
         CalculateRaySpacing();
 
     }
     public void Move(Vector3 velocity)
     {
+        // updates the origins of the raycast
         UpdateRaycastOrigins();
+        // resets the collisions
         collisions.Reset();
 
+        // if the x velocity is not equal to 0 do the following
         if (velocity.x != 0)
         {
             HorizontalCollisions(ref velocity);
         }
+        // if the y velocity is not equal to 0 do the following
         if (velocity.y != 0)
         {
             VerticalCollisions(ref velocity);
         }
 
-
+        // moves the player according to what the velocity is set to 
         transform.Translate(velocity);
     }
 
     void HorizontalCollisions(ref Vector3 velocity)
     {
+        // the direction of x is set to the sin value of the x velocity
         float directionX = Mathf.Sign(velocity.x);
 
+        // the raylength is the absolute value of velocity x added to the skin Width
         float rayLength = Mathf.Abs(velocity.x) + skinWidth;
 
+        // runs a for loop throughout the horizontal ray counts
         for (int i = 0; i < horizontalRayCount; i++)
         {
+            // sets the ray origin to the bottom right and bottom left of the object
             Vector2 rayOrigin = (directionX == -1) ? raycastOrigins.bottomLeft : raycastOrigins.bottomRight;
+
+            // the ray origin is added to a up translation which is then multiplied to the horizontal ray spacing times i
             rayOrigin += Vector2.up * (horizontalRaySpacing * i);
+
+            // sets variable hit to a raycast hit and draws a line from the enemy
             RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.right * directionX, rayLength, collisionMask);
+
+            // this is what actually draws the ray on the screen so you know where the raycast is
             Debug.DrawRay(rayOrigin, Vector2.right * directionX * rayLength, Color.red);
+
+            // if the raycast hits anything do the following
             if (hit)
             {
+                // velocity x is equal to the hit distance minus the skin width, then times that by the direction of x
                 velocity.x = (hit.distance - skinWidth) * directionX;
+
+                // ray length is the distance that the raycast hit from
                 rayLength = hit.distance;
 
                 //sets true if hitting collision on the left or right of x axis
@@ -104,17 +126,20 @@ public class EnemyController : MonoBehaviour
 
     struct RaycastOrigins
     {
+        // sets the raycast origins to top right/left and the bottom left/right
         public Vector2 topLeft, topRight;
         public Vector2 bottomLeft, bottomRight;
     }
 
     public struct CollisionInfo
     {
+        // sets the variables of what defines the boundaries of the enemy
         public bool above, below;
         public bool left, right;
 
         public void Reset()
         {
+            // resets all of the collisions
             above = below = false;
             left = right = false;
         }
