@@ -6,6 +6,7 @@ public class Brazier : EnemyAI
 {
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        TakeDamage(30, 15, 20, 0, collision);
+        // takes 30 fireball damage, takes 15 ice
+        TakeDamage(15, 30, 20, 0, collision);
     }
 }
