@@ -97,7 +97,7 @@ public class Player : MonoBehaviour
             sceneInt = 1;
             string path = "Logs/EventLog.txt";
             File.AppendAllText(path, " Entered Level 1");
-            SavePlayer();
+            // SavePlayer();
         }
         if (sceneName == "Level2")
         {
@@ -105,7 +105,7 @@ public class Player : MonoBehaviour
             iceUnlocked = true;
             string path = "Logs/EventLog.txt";
             File.AppendAllText(path, " Entered Level 2");
-            SavePlayer();
+            //SavePlayer();
         }
         if (sceneName == "Level3")
         {
@@ -113,7 +113,7 @@ public class Player : MonoBehaviour
             iceUnlocked = true;
             string path = "Logs/EventLog.txt";
             File.AppendAllText(path, " Entered Level 3");
-            SavePlayer();
+            // SavePlayer();
         }
 
         anime = GetComponent<Animator>();
