@@ -90,19 +90,33 @@ public class EnemyController : MonoBehaviour
 
     void VerticalCollisions(ref Vector3 velocity)
     {
+        // direction of y is equal to the sin value of y velocity
         float directionY = Mathf.Sign(velocity.y);
 
+        // ray length is equal to the absolute value of the y velocity plus the skin width
         float rayLength = Mathf.Abs(velocity.y) + skinWidth;
 
+        // runs a for loop based on the amount of vertical ray counts
         for (int i = 0; i < verticalRayCount; i++)
         {
+            // the ray origin is equal to the bottom left and top left
             Vector2 rayOrigin = (directionY == -1) ? raycastOrigins.bottomLeft : raycastOrigins.topLeft;
+
+            // the ray origin is the addition of a translation to the right times the vertical ray spacing times i and also added to the x velocity
             rayOrigin += Vector2.right * (verticalRaySpacing * i + velocity.x);
+            
+            // the variable hit is equal to the raycast from the origins and to the up direction, hence vertical collisions
             RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.up * directionY, rayLength, collisionMask);
+            
+            // this is what actually draws the raycast in scene view
             Debug.DrawRay(rayOrigin, Vector2.up * directionY * rayLength, Color.red);
-            if (hit)
+
+            if (hit) // if the raycast hits anything then do the following 
             {
+                // velocity y is equal to the hit distance - the skin width multiplied by the direction y 
                 velocity.y = (hit.distance - skinWidth) * directionY;
+
+                // ray length is equal to the hit distance
                 rayLength = hit.distance;
 
                 //sets bools to true if collisions on above or below 
@@ -115,9 +129,13 @@ public class EnemyController : MonoBehaviour
 
     void UpdateRaycastOrigins()
     {
+        // bounds are equal to the bounds of the collider
         Bounds bounds = collider.bounds;
+
+        // expands the bounds by the skin width multiplied by negative two
         bounds.Expand(skinWidth * -2);
 
+        // sets the ray cast origins of each side to the respective min max values
         raycastOrigins.bottomLeft = new Vector2(bounds.min.x, bounds.min.y);
         raycastOrigins.bottomRight = new Vector2(bounds.min.x, bounds.min.y);
         raycastOrigins.topLeft = new Vector2(bounds.min.x, bounds.max.y);
@@ -147,12 +165,17 @@ public class EnemyController : MonoBehaviour
 
     void CalculateRaySpacing()
     {
+        // sets bounds to the collider boudns
         Bounds bounds = collider.bounds;
+
+        // expands the bounds by the skin width multiplied by negative two
         bounds.Expand(skinWidth * -2);
 
+        // horizontal and vertical ray count is equal to the range between 2 and the max value
         horizontalRayCount = Mathf.Clamp(horizontalRayCount, 2, int.MaxValue);
         verticalRayCount = Mathf.Clamp(horizontalRayCount, 2, int.MaxValue);
 
+        // sets the ray spacing of vertical / horizontal to the bounds size of the repective axis divided by horizontal or vertical ray count minus 1
         horizontalRaySpacing = bounds.size.y / (horizontalRayCount - 1);
         verticalRaySpacing = bounds.size.x / (verticalRayCount - 1);
     }

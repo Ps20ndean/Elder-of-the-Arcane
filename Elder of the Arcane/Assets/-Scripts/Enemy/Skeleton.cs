@@ -53,6 +53,7 @@ public class Skeleton : EnemyAI
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        // takes 30 fireball damage, takes 15 ice damage, deals 120 damage (kinda overkill but okay), and adds 20 score to players count
         TakeDamage(30, 15, 120, 20, collision);
     }
 }
