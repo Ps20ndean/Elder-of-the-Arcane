@@ -18,6 +18,7 @@ public class HealthManager : MonoBehaviour
   
     void Update()
     {
+        // checks if theres a death on every frame
         checkDeath();
     }
 
@@ -60,6 +61,7 @@ public class HealthManager : MonoBehaviour
 
     public void SetHealth(int newHealth)
     {
+        // sets health to a certain amount based on what you put
         health = newHealth;
     }
 

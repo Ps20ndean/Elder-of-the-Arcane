@@ -99,6 +99,8 @@ public class EnemyAI : HealthBar
         yield return new WaitForSeconds(Seconds);
         movement = true;
     }
+
+    // allows for more flexible taking of damage, giving damage, and giving score
     public void TakeDamage(int FireDamage, int IceDamage, int PlayerDamage, int AddScore, Collision2D collision)
     {
         // if the player exists do the following
@@ -109,8 +111,10 @@ public class EnemyAI : HealthBar
             // if colliding with the player
             if (collision.gameObject.tag == "Player")
             {
-                //gets component of healthmanager and takes a certain amount of damage
+                //gets component of healthmanager and takes a certain amount of damage then killing if health = 0
                 player.GetComponent<HealthManager>().Damage(PlayerDamage);
+                playerComp.Dead();
+                
                 
                 //sets movement to false
                 movement = false;
@@ -123,37 +127,53 @@ public class EnemyAI : HealthBar
             }
 
             if (collision.gameObject.tag == "FireBall")
+                // if colliding with a fireball take damage
             {
                 GetComponent<HealthBar>().Damage(FireDamage);
             }
+
             if (collision.gameObject.tag == "Ice")
             {
+                // if colliding with ice then take damage
                 GetComponent<HealthManager>().Damage(IceDamage);
             }
+            // logs events of damage to the event log text file
             string path = "Logs/EventLog.txt";
+            
+            // once the gameobject dies then do the following
             if (gameObject.GetComponent<HealthManager>().health <= 0)
             {
+                // add score based on what is set on the enemy to the players score
                 playerComp.scoreInt += AddScore;
                 if (gameObject.tag == "King Slime") {
+                    // once the king slime is dead then add the event "king slime killed"
                     File.AppendAllText(path, " King Slime Killed");
                 } else if (gameObject.tag == " SkellyBoss") { 
+                    // once the skeleton boss is killed then add the event "skeleton boss killed"
                     File.AppendAllText(path, " Skeleton Boss Killed");
                 } else
                 {
+                    // else if a normal enemy is killed add that an enemy died
                     File.AppendAllText(path, " Enemy Killed");
                 }
             }
         }
     }
+    // this allows for easier and more user friendly use of code
     public void enemyParameterCheck()
     {
+        // sets player to correct gameobject
         player = GameObject.Find("Player");
+        //sets target to the transform component of player
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        // sets anime to the animator component
         anime = GetComponent<Animator>();
+        // myRigidBody is the rigidbody2d component
         myRigidBody = GetComponent<Rigidbody2D>();
     }
     public IEnumerator Wait(float delayInSecs)
     {
+        // wait a certain number of seconds
         yield return new WaitForSecondsRealtime(delayInSecs);
     }
 }

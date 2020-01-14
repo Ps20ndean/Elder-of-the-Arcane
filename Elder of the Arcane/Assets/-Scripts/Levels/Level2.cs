@@ -16,11 +16,13 @@ public class Level2 : MonoBehaviour
 
     private void Start()
     {
+        // sets player to the gameobject player
         player = GameObject.Find("Player");
     }
 
     private void Update()
     {
+        // if theres not a king slime then check collisions
         if (GameObject.Find("King Slime") == null)
         {
             CheckCollision();
@@ -30,23 +32,31 @@ public class Level2 : MonoBehaviour
 
     private void CheckCollision()
     {
-        if (ableTo)
+        if (ableTo) // if its able to do the following
         {
+            // text on screen is set to true
             tavernText.SetActive(true);
+
+            // if you press e then do the following
             if (Input.GetKeyDown(KeyCode.E))
             {
+                // current scene is equal to the current scenes name
                 Scene currentScene = SceneManager.GetActiveScene();
                 if (currentScene.name == "Tutorial")
                 {
+                    // load menu if youre in tutorial when its pressed
                     SceneManager.LoadScene("Menu");
                 }
                 else if (currentScene.name == "Level1")
                 {
+                    // load level 2 if youre in level 1 when you press it
                     SceneManager.LoadScene("Level2");
                 } else if (currentScene.name == "Level2")
                 {
+                    // load level 3 if youre in level 2 when you press it
                     SceneManager.LoadScene("Level3");
                 }
+                // saves the player
                 playerComp.SavePlayer();
             }
         }
@@ -55,6 +65,7 @@ public class Level2 : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            // if theres a trigger collision between the player then able to is set to true
             ableTo = true;
         }
     }
@@ -62,6 +73,7 @@ public class Level2 : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            // if the player leaves the area, sets able to to false and de activates the text on screen
             ableTo = false;
             tavernText.SetActive(false);
         }

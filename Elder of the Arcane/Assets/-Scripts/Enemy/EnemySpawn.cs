@@ -27,9 +27,16 @@ public class EnemySpawn : EnemyAI
                 //if max number of clones is greater than the clone count, spawn a clone and increase clone count
                 if (maxClones > cloneCount)
                 {
+                    // decides where to spawn the clone within a certain range
                     whereToSpawn = new Vector2(transform.position.x, transform.position.y);
+
+                    // sets the variable of clone to what to spawn
                     var clone = Instantiate(enemy, whereToSpawn, Quaternion.identity);
+
+                    // adds one to the clone counter as to not overload the amount of clones on screen
                     cloneCount++;
+
+                    // sets the parent to the enemy spawner
                     clone.transform.parent = overallEnemies;
                 }
             }
