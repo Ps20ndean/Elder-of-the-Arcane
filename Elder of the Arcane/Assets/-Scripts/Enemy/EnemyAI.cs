@@ -31,48 +31,62 @@ public class EnemyAI : HealthBar
     {
         if (facingRight)
         {
+            // allows enemies to switch direction
             intFacingRight = -1;
         }
         else if (!facingRight)
         {
+            // allows enemies to switch direction
             intFacingRight = 1;
         }
     }
     public void Start()
     {
+        // sets to animator component of the gameobject
         anime = GetComponent<Animator>();
+
+        // target gets set to player
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
+        // rigidbody is set to var myRigidBody
         myRigidBody = GetComponent<Rigidbody2D>();
         
     }
     public void Distance()
     {
+        // if target exists
         if (target)
         { 
+            // dist is equal to the distance between player and enemy
             dist = Math.Abs(Vector3.Distance(target.position, transform.position));
+            
+        // if dist is less than the stoppingdistance
          if (dist <= stoppingDistance)
          {
+                //sets indist to true which allows it to move
             inDist = true;
          }
             else if (dist > stoppingDistance)
          {
+                //sets indist to false which stops the enemy from moving
                 inDist = false;
          }
 
             if (movement && inDist)
             {
-
+                // this is what moves the enemy towards the player
                transform.position = Vector2.MoveTowards(transform.position, target.position, movementSpeed * Time.deltaTime);
             }
 
             if ((target.position.x < transform.position.x) && facingRight == true && inDist)
             {
+                // flips the enemy
                 transform.Rotate(Vector3.up * 180);
                 facingRight = false;
             }
             else if ((target.position.x > transform.position.x) && facingRight == false && inDist)
              {
+                // flips the enemy
                 transform.Rotate(Vector3.up * 180);
                 facingRight = true;
              }
@@ -81,23 +95,30 @@ public class EnemyAI : HealthBar
 
     public IEnumerator WaitMov(float Seconds)
     {
+        // wait for a certain number of seconds
         yield return new WaitForSeconds(Seconds);
         movement = true;
     }
     public void TakeDamage(int FireDamage, int IceDamage, int PlayerDamage, int AddScore, Collision2D collision)
     {
+        // if the player exists do the following
         if (player != null)
-        {
+        {   // sets playerComp to the Player script attached to the player
             var playerComp = player.GetComponent<Player>();
 
-
-
+            // if colliding with the player
             if (collision.gameObject.tag == "Player")
             {
+                //gets component of healthmanager and takes a certain amount of damage
                 player.GetComponent<HealthManager>().Damage(PlayerDamage);
-                startInvinc(20);
+                
+                //sets movement to false
                 movement = false;
+
+                // waits a second
                 WaitMov(1f);
+
+                //sets movement to true
                 movement = true;
             }
 
@@ -123,14 +144,6 @@ public class EnemyAI : HealthBar
                 }
             }
         }
-    }
-    IEnumerator startInvinc(float seconds)
-    {
-        //var alpha = player.GetComponent<SpriteRenderer>().color.a;
-        Physics2D.IgnoreLayerCollision(8, 10, true);
-       // alpha = .75f;                 doesnt work, fix this tomorrow
-        yield return new WaitForSeconds(seconds);
-        Physics2D.IgnoreLayerCollision(8, 10, false);
     }
     public void enemyParameterCheck()
     {
