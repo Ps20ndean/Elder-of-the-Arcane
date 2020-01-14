@@ -51,14 +51,10 @@ public class Level2 : MonoBehaviour
                 else if (currentScene.name == "Level1")
                 {
                     // load level 2 if youre in level 1 when you press it
-                    // saves the player
-                    playerComp.SavePlayer();
                     SceneManager.LoadScene("Level2");
                 } else if (currentScene.name == "Level2")
                 {
                     // load level 3 if youre in level 2 when you press it
-                    // saves the player
-                    playerComp.SavePlayer();
                     SceneManager.LoadScene("Level3");
                 }
             }

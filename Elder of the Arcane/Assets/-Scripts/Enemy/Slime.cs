@@ -50,7 +50,7 @@ public class Slime : EnemyAI
         if (gameObject.tag == "King Slime")
         {
             // if its a king slime then it takes 30 fireball damage, 15 ice damage, deals 64 damage, and gives player 100 score on death
-            TakeDamage(45, 15, 64, 100, collision);
+            TakeDamage(45, 15, 64, 1500, collision);
         }
         if (gameObject.tag == "Slime")
         {

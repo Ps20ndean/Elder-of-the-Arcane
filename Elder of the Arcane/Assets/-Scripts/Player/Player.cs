@@ -97,7 +97,9 @@ public class Player : MonoBehaviour
             sceneInt = 1;
             string path = "Logs/EventLog.txt";
             File.AppendAllText(path, " Entered Level 1");
-            // SavePlayer();
+            scoreInt = 0;
+            LoadScore();
+            
         }
         if (sceneName == "Level2")
         {
@@ -105,7 +107,9 @@ public class Player : MonoBehaviour
             iceUnlocked = true;
             string path = "Logs/EventLog.txt";
             File.AppendAllText(path, " Entered Level 2");
-            //SavePlayer();
+            scoreInt = 0;
+            LoadScore();
+
         }
         if (sceneName == "Level3")
         {
@@ -113,7 +117,9 @@ public class Player : MonoBehaviour
             iceUnlocked = true;
             string path = "Logs/EventLog.txt";
             File.AppendAllText(path, " Entered Level 3");
-            // SavePlayer();
+            scoreInt = 0;
+            LoadScore();
+
         }
 
         anime = GetComponent<Animator>();
@@ -272,7 +278,9 @@ public class Player : MonoBehaviour
     }
     public void Dead()
     {
-        if (PlayerHealth <= 0) { 
+        if (PlayerHealth <= 0) {
+            PlayerHealth = 250;
+            SavePlayer();
             string path = "Logs/EventLog.txt";
             File.AppendAllText(path, " Player Died");
             SceneManager.LoadScene("GameOver");
@@ -296,6 +304,10 @@ public class Player : MonoBehaviour
             player = GameObject.Find("Player");
             var playerComp = player.GetComponent<Player>();
             String saveNumber;
+            if (PlayerHealth < 0)
+            {
+                PlayerHealth = 250 + PlayerHealth;
+            }
             if (PlayerHealth < 10)
             {
                 saveNumber = "00" + PlayerHealth.ToString();
@@ -309,7 +321,8 @@ public class Player : MonoBehaviour
             if (scoreInt < 10)
             {
                 saveNumber += "0000" + scoreInt;
-            }else if (scoreInt < 100)
+            }
+            else if (scoreInt < 100)
             {
                 saveNumber += "000" + scoreInt;
             }
@@ -325,7 +338,6 @@ public class Player : MonoBehaviour
             {
                 saveNumber += scoreInt;
             }
-            Debug.Log(saveNumber);
 
 
             string createText = saveNumber + Environment.NewLine;
@@ -372,6 +384,26 @@ public class Player : MonoBehaviour
         }
 
 
+    }
+    public void LoadScore()
+    {
+        string path = "SaveFile/Save.txt";
+
+        //Read the text from directly from the test.txt file
+        StreamReader reader = new StreamReader(path);
+        savefile = reader.ReadToEnd();
+        reader.Close();
+        if (savefile != null && savefile.Length > 8)
+        {
+            char[] b = savefile.ToCharArray();
+            Debug.Log(b[4]);
+            Debug.Log(b[5]);
+            Debug.Log(b[6]);
+            Debug.Log(b[7]);
+            Debug.Log(b[8]);
+            scoreInt = (b[4] * 10000) + (b[5] * 1000) + (b[6] * 100) + (b[7] * 10) + b[8];
+            Debug.Log(scoreInt);
+        }
     }
     void PlayerMoves()
     {

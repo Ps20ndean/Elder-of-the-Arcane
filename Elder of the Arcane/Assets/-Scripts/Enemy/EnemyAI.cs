@@ -145,6 +145,7 @@ public class EnemyAI : HealthBar
             {
                 // add score based on what is set on the enemy to the players score
                 playerComp.scoreInt += AddScore;
+                playerComp.SavePlayer();
                 if (gameObject.tag == "King Slime") {
                     // once the king slime is dead then add the event "king slime killed"
                     File.AppendAllText(path, " King Slime Killed");
