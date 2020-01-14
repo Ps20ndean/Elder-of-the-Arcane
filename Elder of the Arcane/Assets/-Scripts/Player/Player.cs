@@ -272,7 +272,6 @@ public class Player : MonoBehaviour
     }
     public void Dead()
     {
-        
         if (PlayerHealth <= 0) { 
             string path = "Logs/EventLog.txt";
             File.AppendAllText(path, " Player Died");
