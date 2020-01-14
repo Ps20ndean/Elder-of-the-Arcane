@@ -23,13 +23,17 @@ public class HealthBar : HealthManager
 
     public void Update()
     {
+        // checks the healthbars on every frame update
         checkHealthBars();
+
+        // checks if theres a death
         checkDeath();
 
     }
 
     public void checkHealthBars()
     {
+        // handles the healthbar for slimes 
         if (gameObject.tag == "Slime" || gameObject.tag == "Large Slime")
         {
             healthBar.y = 25f;
@@ -39,6 +43,7 @@ public class HealthBar : HealthManager
             healthBars.transform.localScale = healthBar;
             healthBarsBackground.transform.localScale = healthBarsBackgroundScale;
         }
+        // handles the healthbar for boars
         if (gameObject.tag == "Boar")
         {
             healthBar.y = 25f;
@@ -48,6 +53,8 @@ public class HealthBar : HealthManager
             healthBars.transform.localScale = healthBar;
             healthBarsBackground.transform.localScale = healthBarsBackgroundScale;
         }
+
+        // handles the healthbar for eye demons
         if (gameObject.tag == "eyeDemon")
         {
             healthBar.y = 25f;
@@ -57,16 +64,8 @@ public class HealthBar : HealthManager
             healthBars.transform.localScale = healthBar;
             healthBarsBackground.transform.localScale = healthBarsBackgroundScale;
         }
-        //if the tag is a boss
-        if (gameObject.tag == "SlothBoss")
-        {
-            healthBar.y = 20f;
-            healthBarsBackgroundScale.y = 20f;
-            healthBar.x = health * .25f;
-            healthBarsBackgroundScale.x = healthMax * .25f;
-            healthBars.transform.localScale = healthBar;
-            healthBarsBackground.transform.localScale = healthBarsBackgroundScale;
-        }
+        
+        // handles the healthbar for bats
         if (gameObject.tag == "Bat")
         {
             healthBar.y = 25f;
@@ -78,6 +77,8 @@ public class HealthBar : HealthManager
 
 
         }
+
+        // handles the healthbar for skeletons
         if (gameObject.tag == "Skellyboy")
         {
             healthBar.y = 25f;
@@ -87,6 +88,8 @@ public class HealthBar : HealthManager
             healthBars.transform.localScale = healthBar;
             healthBarsBackground.transform.localScale = healthBarsBackgroundScale;
         }
+
+        // handles the healthbar for king slime
         if (gameObject.tag == "King Slime")
         {
             healthBar.y = 25f;
@@ -95,6 +98,8 @@ public class HealthBar : HealthManager
             healthBars.transform.localScale = healthBar;
             healthBarsBackground.transform.localScale = healthBarsBackgroundScale;
         }
+
+        // handles the healthbar for spicy bois
         if (gameObject.tag == "Spicy Boi")
         {
             healthBar.y = 25f;
@@ -104,7 +109,8 @@ public class HealthBar : HealthManager
             healthBars.transform.localScale = healthBar;
             healthBarsBackground.transform.localScale = healthBarsBackgroundScale;
         }
-        //if its the player
+
+        // if its the player, and handles the healthbar for the player
         if (gameObject.tag == "Player")
         {
             healthBar.y = 50f;

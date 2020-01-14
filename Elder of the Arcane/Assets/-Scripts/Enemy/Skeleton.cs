@@ -12,6 +12,7 @@ public class Skeleton : EnemyAI
 
     new void Start()
     {
+        // sets the parameters to the respective values
         enemyParameterCheck();
     }
 
