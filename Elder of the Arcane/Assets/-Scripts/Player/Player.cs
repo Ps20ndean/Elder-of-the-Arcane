@@ -346,8 +346,24 @@ public class Player : MonoBehaviour
         if (savefile != null&&savefile.Length>8){ 
         char[] b = savefile.ToCharArray();
         PlayerHealth = b[0] * 100 + b[1] * 10 + b[2];
-        sceneInt = b[3] - 48;
         scoreInt = b[4] * 10000 + b[5] * 1000 + b[6] * 100 + b[7] * 10 + b[8];
+            if ( b[3]== 1 )
+            {
+                SceneManager.LoadScene("Level1");
+            }
+            else if ((b[3] == 2))
+            {
+                SceneManager.LoadScene("Level2");
+            }
+            else if ((b[3] == 3))
+            {
+                SceneManager.LoadScene("Level3");
+            }
+            else
+            {
+                SceneManager.LoadScene("Level1");
+            }
+           
     }   else
         {
             PlayerHealth = 250;
