@@ -8,8 +8,10 @@ public class CameraScript : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (target)
+        if (target) // if the target exists then do the following
         {
+
+            // follows the player around
             transform.position = new Vector3(target.position.x, target.position.y + 3.25f, transform.position.z);
         }
     }

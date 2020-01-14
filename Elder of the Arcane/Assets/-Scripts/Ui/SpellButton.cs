@@ -15,6 +15,7 @@ public class SpellButton : MonoBehaviour
 
     public void UseIce()
     {
+        // sets all of the ice components to true and disables all other spell components
         playerComp.iceBookHeld = true;
         playerComp.fireBookHeld = false;
         playerComp.speedBookHeld = false;
@@ -27,6 +28,7 @@ public class SpellButton : MonoBehaviour
     }
     public void UseFire()
     {
+        // sets all of the fire components to true and disables all other spell components
         playerComp.iceBookHeld = false;
         playerComp.fireBookHeld = true;
         playerComp.speedBookHeld = false;
@@ -39,6 +41,7 @@ public class SpellButton : MonoBehaviour
     }
     public void UseSpeed()
     {
+        // sets all of the speed components to true and disables all other spell components
         playerComp.iceBookHeld = false;
         playerComp.fireBookHeld = false;
         playerComp.speedBookHeld = true;
@@ -52,6 +55,7 @@ public class SpellButton : MonoBehaviour
 
     public void UseEarth()
     {
+        // sets all of the healing components to true and disables all other spell components
         playerComp.iceBookHeld = false;
         playerComp.fireBookHeld = false;
         playerComp.speedBookHeld = false;
@@ -65,6 +69,7 @@ public class SpellButton : MonoBehaviour
 
     public void UseNothing()
     {
+        // sets everything to false
         playerComp.iceBookHeld = false;
         playerComp.fireBookHeld = false;
         playerComp.speedBookHeld = false;

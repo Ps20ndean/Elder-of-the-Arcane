@@ -20,10 +20,12 @@ public class MainMen : MonoBehaviour
     //Exits the game
     public void ExitGame()
     {
+        // exits the game
         Application.Quit();
     }
     public void LoadTutorial()
     {
+        // loads tutorial
         SceneManager.LoadScene("Tutorial");
     }
 }
