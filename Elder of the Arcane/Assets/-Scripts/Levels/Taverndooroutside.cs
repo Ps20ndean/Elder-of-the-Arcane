@@ -11,17 +11,19 @@ public class Taverndooroutside : MonoBehaviour
 
     private void Update()
     {
+        // runs the check tavern method
         CheckTavern();
     }
 
     private void CheckTavern()
     {
-        if (ableTo)
+        if (ableTo) // if able to then do the following
         {
+            // on screen text is activated
             tavernText.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E)) // if player presses e do the following
             {
-                SceneManager.LoadScene("Tavern (Start)");
+                SceneManager.LoadScene("Tavern (Start)"); // loads the tavern scene
             }
         }
     }
@@ -29,6 +31,7 @@ public class Taverndooroutside : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            // if theres a collision with the player then set able to to true
             ableTo = true;
         }
     }
@@ -36,6 +39,7 @@ public class Taverndooroutside : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            // if a collision with the player is true then set able to to false and de activate the on screen text
             ableTo = false;
             tavernText.SetActive(false);
         }
