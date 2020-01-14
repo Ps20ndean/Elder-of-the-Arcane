@@ -157,12 +157,10 @@ public class Player : MonoBehaviour
 
         if (gameObject.transform.position.y <= -100)
         {
+            PlayerHealth = 0;
             Dead();
         }
-        if (gameObject.GetComponent<HealthManager>().health <= 0)
-        {
-            Dead();
-        }
+       
 
         PlayerMoves();
 
@@ -274,16 +272,19 @@ public class Player : MonoBehaviour
     }
     public void Dead()
     {
-        string path = "Logs/EventLog.txt";
-        File.AppendAllText(path, " Player Died");
-        SceneManager.LoadScene("GameOver");
-        fire1.SetActive(false);
-        fire2.SetActive(false);
-        fire3.SetActive(false);
-        ice1.SetActive(false);
-        ice2.SetActive(false);
-        ice3.SetActive(false);
-        healthBar.SetActive(false);
+        
+        if (PlayerHealth <= 0) { 
+            string path = "Logs/EventLog.txt";
+            File.AppendAllText(path, " Player Died");
+            SceneManager.LoadScene("GameOver");
+            fire1.SetActive(false);
+            fire2.SetActive(false);
+            fire3.SetActive(false);
+            ice1.SetActive(false);
+            ice2.SetActive(false);
+            ice3.SetActive(false);
+            healthBar.SetActive(false);
+        }
     }
     public void SavePlayer()
     {

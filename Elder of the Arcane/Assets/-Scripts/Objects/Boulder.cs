@@ -23,19 +23,22 @@ public class Boulder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        dist = Math.Abs(Vector3.Distance(target.position, transform.position));
-        if (dist <= stoppingDistance)
+        if (target != null)
         {
-            inDist = true;
-        }
-        else if (dist > stoppingDistance)
-        {
-            inDist = false;
-        }
+            dist = Math.Abs(Vector3.Distance(target.position, transform.position));
+            if (dist <= stoppingDistance)
+            {
+                inDist = true;
+            }
+            else if (dist > stoppingDistance)
+            {
+                inDist = false;
+            }
 
-        if (movement && inDist)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, target.position, movementSpeed * Time.deltaTime);
+            if (movement && inDist)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, target.position, movementSpeed * Time.deltaTime);
+            }
         }
     }
 

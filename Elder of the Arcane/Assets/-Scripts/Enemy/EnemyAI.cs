@@ -111,8 +111,10 @@ public class EnemyAI : HealthBar
             // if colliding with the player
             if (collision.gameObject.tag == "Player")
             {
-                //gets component of healthmanager and takes a certain amount of damage
+                //gets component of healthmanager and takes a certain amount of damage then killing if health = 0
                 player.GetComponent<HealthManager>().Damage(PlayerDamage);
+                playerComp.Dead();
+                
                 
                 //sets movement to false
                 movement = false;
