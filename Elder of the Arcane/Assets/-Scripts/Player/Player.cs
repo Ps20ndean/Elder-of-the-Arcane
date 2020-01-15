@@ -92,6 +92,7 @@ public class Player : MonoBehaviour
          currentScene = SceneManager.GetActiveScene();
 
         sceneName = currentScene.name;
+        // sets the sceneint and writes to the eventlog and also imports the players score
         if (sceneName == "Level1")
         {
             sceneInt = 1;
@@ -121,7 +122,7 @@ public class Player : MonoBehaviour
             LoadScore();
 
         }
-
+        //initialization
         anime = GetComponent<Animator>();
         fireBookHeld = true;
         Physics2D.IgnoreLayerCollision(8, 9);
@@ -134,14 +135,14 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        
+        //calculates player knockback
         if (collision.gameObject.layer == 10)
         {
-            if (collision.gameObject.layer == 10 && collision.gameObject.transform.position.x > player.transform.position.x)
+            if (collision.gameObject.transform.position.x > player.transform.position.x)
             {
                 velocity.x += -40;
             }
-            if (collision.gameObject.layer == 10 && collision.gameObject.transform.position.x <= player.transform.position.x)
+            if (collision.gameObject.transform.position.x <= player.transform.position.x)
             {
                 velocity.x += 40;
             }
@@ -152,29 +153,30 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        //updates the score text
         string scoreIntString = scoreInt.ToString();
         scoreText.GetComponent<Text>().text = scoreIntString;
-
+        //runs the player movement animations
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
         anime.SetFloat("Speed", Math.Abs(h));
 
        
-
+        //checks if player fell off of the map
         if (gameObject.transform.position.y <= -100)
         {
             PlayerHealth = 0;
             Dead();
         }
        
-
+        //checks player movement
         PlayerMoves();
-
+        //checks player velocity
         CalculateVelocity();
 
-
+        //controls aerial movement
         controller.Move(velocity * Time.deltaTime, directionalInput);
-
+        //handles slope movement
         if (controller.collisions.above || controller.collisions.below)
         {
             if (controller.collisions.slidingDownMaxSlope)
@@ -196,7 +198,7 @@ public class Player : MonoBehaviour
 
     public void OnSpaceJumpInputDown()
     {
-        if (controller.collisions.below)
+        if (controller.collisions.below) // determines if you can jump
         {
             if (controller.collisions.slidingDownMaxSlope)
             {
@@ -213,7 +215,7 @@ public class Player : MonoBehaviour
             CreateRunDust();
         }
     }
-    public void OnWJumpInputDown()
+    public void OnWJumpInputDown()//alterntive w to jump
     {
         if (controller.collisions.below)
         {
@@ -247,18 +249,14 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.layer == 10)
         {
-
-            StartCoroutine(WaitEnemy(.75f));
-        }
-        if (collision.gameObject.tag == "SlothBoss")
-        {
+            //handles invincibility
             StartCoroutine(WaitEnemy(.75f));
         }
     }
     
     public void OnJumpInputUp()
     {
-       
+       //handles jumping
         if (velocity.y > minJumpVelocity)
         {
             velocity.y = minJumpVelocity;
@@ -269,15 +267,18 @@ public class Player : MonoBehaviour
     
     IEnumerator WaitQuit(float seconds)
     {
+        //delayed quit
         yield return new WaitForSeconds(seconds);
         Application.Quit();
     }
     IEnumerator WaitEnemy(float seconds)
-    {
+    { 
+        //ienumerator for enemy delays
         yield return new WaitForSeconds(seconds);
     }
     public void Dead()
-    {
+    { 
+        //handles player death
         if (PlayerHealth <= 0) {
             PlayerHealth = 250;
             SavePlayer();
@@ -295,6 +296,7 @@ public class Player : MonoBehaviour
     }
     public void SavePlayer()
     {
+        //handles player saving
         Scene currentScene = SceneManager.GetActiveScene();
         if ((currentScene.name != "Tutorial")|| (currentScene.name != "Menu"))
         {
@@ -304,6 +306,7 @@ public class Player : MonoBehaviour
             player = GameObject.Find("Player");
             var playerComp = player.GetComponent<Player>();
             String saveNumber;
+            //ensures that the player health will be saved as 3 digits
             if (PlayerHealth < 0)
             {
                 PlayerHealth = 250 + PlayerHealth;
@@ -318,6 +321,7 @@ public class Player : MonoBehaviour
             }
             else { saveNumber = PlayerHealth.ToString(); }
             saveNumber += sceneInt.ToString();
+            //ensures that the player score will be saved as 5 digits
             if (scoreInt < 10)
             {
                 saveNumber += "0000" + scoreInt;
@@ -339,7 +343,7 @@ public class Player : MonoBehaviour
                 saveNumber += scoreInt;
             }
 
-
+            //writes the save data to the save.txt text file
             string createText = saveNumber + Environment.NewLine;
             File.WriteAllText(path, createText);
         }
@@ -349,21 +353,25 @@ public class Player : MonoBehaviour
 
     public void Load()
     {
+        //loads the player information
         string path = "SaveFile/Save.txt";
 
         //Read the text from directly from the test.txt file
         StreamReader reader = new StreamReader(path);
         savefile = reader.ReadToEnd();
         reader.Close();
-        if (savefile != null&&savefile.Length>8){ 
-        char[] b = savefile.ToCharArray();
+        int myInt;
+        if (savefile != null&&savefile.Length>8&& int.TryParse(savefile, out myInt))
+        { 
         PlayerHealth = Convert.ToInt32(savefile.Substring(0, 3));
             LoadScore();
+            //loads the correct scene based on what was save to the save file
             SceneManager.LoadScene(Convert.ToInt32(savefile.Substring(3, 1)) + 2);
            
           
     }   else
         {
+            //error handling incase the save file does not contain the right amount of characters
             PlayerHealth = 250;
             sceneInt = 1;
             scoreInt = 0;
@@ -373,19 +381,20 @@ public class Player : MonoBehaviour
     }
     public void LoadScore()
     {
+        //loads only the score for optimization
         string path = "SaveFile/Save.txt";
         //Read the text from directly from the test.txt file
         StreamReader reader = new StreamReader(path);
         savefile = reader.ReadToEnd();
         reader.Close();
-        if (savefile != null && savefile.Length > 8)
+        if (savefile != null && savefile.Length > 8 && int.TryParse(savefile, out myInt))
         {
             scoreInt = (Convert.ToInt32(savefile.Substring(4, 5)));
         }
     }
     void PlayerMoves()
     {
-        //Player Direction
+        //Player Direction and which direction they face
         player = GameObject.Find("Player");
         if (player.transform.position.x < formerPosition && !facingRight)
         {
@@ -400,7 +409,7 @@ public class Player : MonoBehaviour
         formerPosition = player.transform.position.x;
 
 
-        //Physics
+        //handles which direction the player is facing
         void FlipPlayer()
         {
             facingRight = !facingRight;
