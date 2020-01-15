@@ -90,3 +90,5 @@ UnassignedReferenceException: The variable DontMessWithThisText of Chests has no
 You probably need to assign the DontMessWithThisText variable of the Chests script in the inspector.Chests.OnTriggerExit2D (UnityEngine.Collider2D collision) (at Assets/-Scripts/Objects/Chests.cs:48)
 UnassignedReferenceException: The variable DontMessWithThisText of Chests has not been assigned.
 You probably need to assign the DontMessWithThisText variable of the Chests script in the inspector.Chests.OnTriggerEnter2D (UnityEngine.Collider2D collision) (at Assets/-Scripts/Objects/Chests.cs:32)
+NullReferenceException: Object reference not set to an instance of an objectProjectileAttack.ShootHeal () (at Assets/-Scripts/Projectiles/ProjectileAttack.cs:189)
+ProjectileAttack.Update () (at Assets/-Scripts/Projectiles/ProjectileAttack.cs:96)

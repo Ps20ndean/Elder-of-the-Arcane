@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ProjectileAttack : MonoBehaviour
 {
@@ -27,6 +28,9 @@ public class ProjectileAttack : MonoBehaviour
     public bool Charging = false;
 
     public int varFacingRight;
+
+    public GameObject healText;
+
     public void Start()
     {
         // ignores the collisions between the player and the projectiles
@@ -142,6 +146,12 @@ public class ProjectileAttack : MonoBehaviour
         Destroy(bfire, 2f);
     }
 
+    public IEnumerator TextWait(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        healText.SetActive(false);
+        healText.GetComponent<Text>().text = " ";
+    }
     void ShootIce()
     {
         // spawns three ice spikes in front of the player and above the player
@@ -173,7 +183,13 @@ public class ProjectileAttack : MonoBehaviour
         GameObject bheart = (GameObject)(Instantiate(heart, transform.position + transform.up * 3f, Quaternion.identity));
 
         // disables the boxcollider component upon spawning
-        bheart.GetComponent<BoxCollider2D>().enabled = false;
+        bheart.GetComponent<BoxCollider2D>().enabled = false; // disables the collider of the spawned heart
+
+        healText.SetActive(true); // enables text
+
+        healText.GetComponent<Text>().text = "Healed by 100"; // shows on screen that youve been healed by 100
+
+        StartCoroutine(TextWait(2f)); // waits 2 seconds and then resets the text and disables it
 
         playercomp.Heal(100); // heals the player by 100 hp
 
