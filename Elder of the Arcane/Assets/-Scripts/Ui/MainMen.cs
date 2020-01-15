@@ -29,4 +29,9 @@ public class MainMen : MonoBehaviour
         // loads tutorial
         SceneManager.LoadScene("Tutorial");
     }
+    public void SaveGame()
+    {
+        Player player = new Player();
+        player.SavePlayer();
+    }
 }

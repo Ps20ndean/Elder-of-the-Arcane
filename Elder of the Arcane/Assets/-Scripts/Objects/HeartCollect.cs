@@ -57,7 +57,7 @@ public class HeartCollect : MonoBehaviour
 
             // heal the player by 75 when you collect a heart
             player.GetComponent<HealthManager>().Heal(75);
-            healText.SetActive(true); // enables text
+         
 
             healText.GetComponent<Text>().text = "Healed by 75"; // shows on screen that youve been healed by 100
 
