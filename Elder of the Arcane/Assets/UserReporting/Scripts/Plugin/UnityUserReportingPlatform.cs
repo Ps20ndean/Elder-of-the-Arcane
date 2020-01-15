@@ -482,7 +482,6 @@ namespace Unity.Cloud.UserReporting.Plugin
                     if (isError)
                     {
                         string errorMessage = string.Format("UnityUserReportingPlatform.Post: {0} {1}", postOperation.WebRequest.responseCode, postOperation.WebRequest.error);
-                        UnityEngine.Debug.Log("IGNORE : " + errorMessage);
                         client.LogEvent(UserReportEventLevel.Error, errorMessage);
                     }
                     postOperation.ProgressCallback(1, 1);
