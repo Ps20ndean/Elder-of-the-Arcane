@@ -387,6 +387,7 @@ public class Player : MonoBehaviour
         StreamReader reader = new StreamReader(path);
         savefile = reader.ReadToEnd();
         reader.Close();
+        int myInt;
         if (savefile != null && savefile.Length > 8 && int.TryParse(savefile, out myInt))
         {
             scoreInt = (Convert.ToInt32(savefile.Substring(4, 5)));

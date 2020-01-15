@@ -17,33 +17,28 @@ public class PlayerInput : MonoBehaviour {
 	void Update () {
 
         var players = GameObject.Find("Player");
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            //Testing Only Delete me
-            var playerComp = player.GetComponent<Player>();
-            playerComp.SavePlayer();
-        }
-
+        //detects user directional input
         Vector2 directionalInput = new Vector2 (Input.GetAxisRaw ("Horizontal"), Input.GetAxisRaw ("Vertical"));
 		player.SetDirectionalInput (directionalInput);
-
+        //runs jump command used to detect how high jump should go
 		if (Input.GetKeyDown (KeyCode.Space)) {
 			player.OnSpaceJumpInputDown ();
 		}
 		if (Input.GetKeyUp (KeyCode.Space)) {
 			player.OnJumpInputUp ();
-		}
+		}//runs jump command with set height for alternitive jump option
         if (Input.GetKeyDown(KeyCode.W))
         {
             player.OnWJumpInputDown();
-        }
+        }//closes game
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
         }
-
+        //opens and closes inventory
         if (Input.GetKeyDown(KeyCode.Tab))
         {
+            //pauses or resumes game based on if the inventory is open
             if (invOn)
             {
                 invOn = false;

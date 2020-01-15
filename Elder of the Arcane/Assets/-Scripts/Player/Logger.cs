@@ -6,7 +6,7 @@ using System.IO;
 
 public class Logger : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // this script writes incoming log messages to the log.txt file
     void Start()
     {
         DontDestroyOnLoad(this);
@@ -20,10 +20,5 @@ public class Logger : MonoBehaviour
     void HandleLog(string logString, string stackTrace, LogType type)
     {
         File.AppendAllText("Logs/Log.txt" , logString + stackTrace);
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
