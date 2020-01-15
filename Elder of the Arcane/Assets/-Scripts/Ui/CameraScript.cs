@@ -12,7 +12,7 @@ public class CameraScript : MonoBehaviour
         {
 
             // follows the player around
-            transform.position = new Vector3(target.position.x, target.position.y + 3.25f, transform.position.z);
+            transform.position = new Vector3(target.position.x, target.position.y + 2f, transform.position.z);
         }
     }
 }

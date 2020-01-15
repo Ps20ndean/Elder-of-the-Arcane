@@ -199,7 +199,7 @@ public class UserReportingScript : MonoBehaviour
 
     private void ClearForm()
     {
-        email_text.text = null;
+        email_text.text = String.Empty;
     }
 
     /// <summary>
