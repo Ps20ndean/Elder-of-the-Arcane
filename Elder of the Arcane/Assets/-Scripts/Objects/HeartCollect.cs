@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HeartCollect : MonoBehaviour
 {
     private GameObject player;
     HealthManager healthManager;
+    public GameObject healText;
 
     private void Start()
     {
@@ -16,6 +18,12 @@ public class HeartCollect : MonoBehaviour
         Physics2D.IgnoreLayerCollision(10, 13);
     }
 
+    public IEnumerator TextWait(float seconds)
+    {
+        yield return new WaitForSeconds(seconds); // waits a couple seconds
+        healText.SetActive(false); // disables heal text
+        healText.GetComponent<Text>().text = " "; // resets text
+    }
     public void Update()
     {
         // heartbox is equal to the boxcollider of the object
@@ -49,7 +57,12 @@ public class HeartCollect : MonoBehaviour
 
             // heal the player by 75 when you collect a heart
             player.GetComponent<HealthManager>().Heal(75);
-           
+            healText.SetActive(true); // enables text
+
+            healText.GetComponent<Text>().text = "Healed by 75"; // shows on screen that youve been healed by 100
+
+            StartCoroutine(TextWait(2f)); // waits 2 seconds and then resets the text and disables it
+
             // destroys the gameobject on collecting
             Destroy(gameObject);
 
