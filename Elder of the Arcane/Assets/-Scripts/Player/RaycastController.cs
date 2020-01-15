@@ -29,8 +29,8 @@ public class RaycastController : MonoBehaviour {
 	public virtual void Start() {
 		CalculateRaySpacing ();
 	}
-
-	public void UpdateRaycastOrigins() {
+    //updates the raycasts
+    public void UpdateRaycastOrigins() {
 		Bounds bounds = collider.bounds;
 		bounds.Expand (skinWidth * -2);
 		
@@ -39,8 +39,8 @@ public class RaycastController : MonoBehaviour {
 		raycastOrigins.topLeft = new Vector2 (bounds.min.x, bounds.max.y);
 		raycastOrigins.topRight = new Vector2 (bounds.max.x, bounds.max.y);
 	}
-	
-	public void CalculateRaySpacing() {
+    //calculates ray collision
+    public void CalculateRaySpacing() {
 		Bounds bounds = collider.bounds;
 		bounds.Expand (skinWidth * -2f);
 
@@ -53,7 +53,7 @@ public class RaycastController : MonoBehaviour {
 		horizontalRaySpacing = bounds.size.y / (horizontalRayCount - 1);
 		verticalRaySpacing = bounds.size.x / (verticalRayCount - 1);
 	}
-	
+	//sets the origin of the raycasts
 	public struct RaycastOrigins {
 		public Vector2 topLeft, topRight;
 		public Vector2 bottomLeft, bottomRight;
