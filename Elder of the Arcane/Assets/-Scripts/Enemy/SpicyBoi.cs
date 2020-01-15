@@ -53,8 +53,11 @@ public class SpicyBoi : EnemyAI
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // takes 10 fireball damage, 30 ice damage, deals 20 damage, and gives the player 20 score when it dies
-        TakeDamage(10, 30, 10, 20, collision);
-        Destroy(this);
+        TakeDamage(30, 30, 25, 20, collision);
+        if (collision.gameObject.tag == "Player")
+        {
+            Destroy(gameObject);
+        }
     }
     public IEnumerator Wait(float delayInSecs)
     {
