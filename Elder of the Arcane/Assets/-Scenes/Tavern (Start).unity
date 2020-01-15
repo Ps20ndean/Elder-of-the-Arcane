@@ -2394,6 +2394,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 7.6136017
       objectReference: {fileID: 0}
+    - target: {fileID: 148920542181579636, guid: 6d3e43b33ea65ad4b9112691376edf39,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SaveGame
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d3e43b33ea65ad4b9112691376edf39, type: 3}
 --- !u!1 &834460564 stripped
