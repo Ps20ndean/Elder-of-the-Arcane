@@ -10,7 +10,10 @@ public class HeartCollect : MonoBehaviour
     private void Start()
     {
         player = GameObject.Find("Player");
+
         var heartBox = this.GetComponent<BoxCollider2D>();
+
+        Physics2D.IgnoreLayerCollision(10, 13);
     }
 
     public void Update()
