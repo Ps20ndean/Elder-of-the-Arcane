@@ -49,6 +49,10 @@ public class Chests : MonoBehaviour
                 playerComp.scoreInt += 1000; // add 1000 score
             }
         }
+        else if (TimesCollected >= 1)
+        {
+            DontMessWithThisText.SetActive(false);
+        }
         else
         {
             // do nothing
