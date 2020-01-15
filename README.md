@@ -1,2 +1,5 @@
 # Elders-Of-The-Arcane
-stuff
+Jared, Aaron, Alex, Noah
+
+Bpa Software Development Team Project
+
