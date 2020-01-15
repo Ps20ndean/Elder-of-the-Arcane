@@ -10,6 +10,14 @@ public class SpicyBoi : EnemyAI
     {
         // sets the parameters to the respective values
         enemyParameterCheck();
+        if (target){
+            if (target.position.x > transform.position.x)
+            {
+                transform.Rotate(Vector3.up * 180);
+                facingRight = true;
+            }
+        }
+        
     }
 
     // Update is called once per frame
