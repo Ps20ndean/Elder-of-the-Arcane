@@ -357,25 +357,11 @@ public class Player : MonoBehaviour
         reader.Close();
         if (savefile != null&&savefile.Length>8){ 
         char[] b = savefile.ToCharArray();
-        PlayerHealth = b[0] * 100 + b[1] * 10 + b[2];
-        scoreInt = b[4] * 10000 + b[5] * 1000 + b[6] * 100 + b[7] * 10 + b[8];
-            if ( b[3]== 1 )
-            {
-                SceneManager.LoadScene("Level1");
-            }
-            else if ((b[3] == 2))
-            {
-                SceneManager.LoadScene("Level2");
-            }
-            else if ((b[3] == 3))
-            {
-                SceneManager.LoadScene("Level3");
-            }
-            else
-            {
-                SceneManager.LoadScene("Level1");
-            }
+        PlayerHealth = Convert.ToInt32(savefile.Substring(0, 3));
+            LoadScore();
+            SceneManager.LoadScene(Convert.ToInt32(savefile.Substring(3, 1)) + 2);
            
+          
     }   else
         {
             PlayerHealth = 250;
@@ -388,21 +374,13 @@ public class Player : MonoBehaviour
     public void LoadScore()
     {
         string path = "SaveFile/Save.txt";
-
         //Read the text from directly from the test.txt file
         StreamReader reader = new StreamReader(path);
         savefile = reader.ReadToEnd();
         reader.Close();
         if (savefile != null && savefile.Length > 8)
         {
-            char[] b = savefile.ToCharArray();
-            Debug.Log(b[4]);
-            Debug.Log(b[5]);
-            Debug.Log(b[6]);
-            Debug.Log(b[7]);
-            Debug.Log(b[8]);
-            scoreInt = (b[4] * 10000) + (b[5] * 1000) + (b[6] * 100) + (b[7] * 10) + b[8];
-            Debug.Log(scoreInt);
+            scoreInt = (Convert.ToInt32(savefile.Substring(4, 5)));
         }
     }
     void PlayerMoves()
