@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 1670552990010994558}
   - component: {fileID: 1670552990010994557}
   - component: {fileID: 4843008181661293666}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Brazier
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -276,6 +276,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HealthBar
       objectReference: {fileID: 0}
+    - target: {fileID: 1473727354331688, guid: 01a6b42a1d84b664c890d8dcb066becd, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4090514546342678, guid: 01a6b42a1d84b664c890d8dcb066becd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -319,6 +323,18 @@ PrefabInstance:
     - target: {fileID: 4090514546342678, guid: 01a6b42a1d84b664c890d8dcb066becd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1065743225566564, guid: 01a6b42a1d84b664c890d8dcb066becd, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1440491198422750, guid: 01a6b42a1d84b664c890d8dcb066becd, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573002466582326, guid: 01a6b42a1d84b664c890d8dcb066becd, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01a6b42a1d84b664c890d8dcb066becd, type: 3}

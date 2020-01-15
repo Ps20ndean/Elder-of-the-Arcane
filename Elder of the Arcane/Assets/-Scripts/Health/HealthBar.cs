@@ -109,6 +109,15 @@ public class HealthBar : HealthManager
             healthBars.transform.localScale = healthBar;
             healthBarsBackground.transform.localScale = healthBarsBackgroundScale;
         }
+        //handles the healthbar for Gluttony
+        if (gameObject.tag == "Gluttony")
+        {
+            healthBar.y = 35f;
+            healthBarsBackgroundScale.y = 20f;
+            healthBar.x = health * 1.5f;
+            healthBars.transform.localScale = healthBar;
+            healthBarsBackground.transform.localScale = healthBarsBackgroundScale;
+        }
 
         // if its the player, and handles the healthbar for the player
         if (gameObject.tag == "Player")

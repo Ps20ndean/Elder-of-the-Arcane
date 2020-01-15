@@ -175,6 +175,8 @@ public class EnemyAI : HealthBar
     public IEnumerator Wait(float delayInSecs)
     {
         // wait a certain number of seconds
-        yield return new WaitForSecondsRealtime(delayInSecs);
+        yield return new WaitForSeconds(delayInSecs);
     }
+
+   
 }
