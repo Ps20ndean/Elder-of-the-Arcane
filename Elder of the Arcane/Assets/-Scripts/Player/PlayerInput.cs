@@ -18,8 +18,11 @@ public class PlayerInput : MonoBehaviour {
 
         var players = GameObject.Find("Player");
         //detects user directional input
-        Vector2 directionalInput = new Vector2 (Input.GetAxisRaw ("Horizontal"), Input.GetAxisRaw ("Vertical"));
-		player.SetDirectionalInput (directionalInput);
+        if (Time.timeScale != 0)
+        {
+            Vector2 directionalInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+            player.SetDirectionalInput(directionalInput);
+        }
         //runs jump command used to detect how high jump should go
 		if (Input.GetKeyDown (KeyCode.Space)) {
 			player.OnSpaceJumpInputDown ();

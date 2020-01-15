@@ -185,6 +185,7 @@ public class UserReportingScript : MonoBehaviour
     /// </summary>
     public void CancelUserReport()
     {
+        Time.timeScale = 1;
         this.CurrentUserReport = null;
         this.ClearForm();
     }
@@ -197,7 +198,7 @@ public class UserReportingScript : MonoBehaviour
 
     private void ClearForm()
     {
-      
+        email_text.text = null;
     }
 
     /// <summary>
@@ -210,7 +211,7 @@ public class UserReportingScript : MonoBehaviour
         {
             return;
         }
-
+        Time.timeScale = 0;
         // Set Creating Flag
         this.isCreatingUserReport = true;
 
@@ -349,7 +350,7 @@ public class UserReportingScript : MonoBehaviour
 
         // Set Submitting Flag
         this.isSubmitting = true;
-
+        Time.timeScale = 1;
         // Set Summary
         if (this.SummaryInput != null)
         {

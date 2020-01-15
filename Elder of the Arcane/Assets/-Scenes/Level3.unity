@@ -5155,7 +5155,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scoreText
       value: 
-      objectReference: {fileID: 623501726}
+      objectReference: {fileID: 1004316317}
     - target: {fileID: 822633960989871291, guid: bcea3966618c76a48b33a47210fcaa71,
         type: 3}
       propertyPath: inventory
@@ -5308,12 +5308,6 @@ MonoBehaviour:
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 3
   m_ColliderType: 1
---- !u!1 &623501726 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7872501624001801514, guid: 6d3e43b33ea65ad4b9112691376edf39,
-    type: 3}
-  m_PrefabInstance: {fileID: 1660845876}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &626750405
 GameObject:
   m_ObjectHideFlags: 0
@@ -5916,6 +5910,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 831dd5bfdf624014aa6e9e6150a7846f, type: 3}
+--- !u!1 &1004316317 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8298918002185037313, guid: 6d3e43b33ea65ad4b9112691376edf39,
+    type: 3}
+  m_PrefabInstance: {fileID: 1660845876}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1052947948
 PrefabInstance:
   m_ObjectHideFlags: 0
