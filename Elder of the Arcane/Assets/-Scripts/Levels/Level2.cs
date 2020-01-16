@@ -45,17 +45,23 @@ public class Level2 : MonoBehaviour
                 Scene currentScene = SceneManager.GetActiveScene();
                 if (currentScene.name == "Tutorial")
                 {
+
                     // load menu if youre in tutorial when its pressed
                     SceneManager.LoadScene("Menu");
                 }
                 else if (currentScene.name == "Level1")
                 {
+
                     // load level 2 if youre in level 1 when you press it
                     SceneManager.LoadScene("Level2");
                 } else if (currentScene.name == "Level2")
                 {
-                    // load level 3 if youre in level 2 when you press it
-                    SceneManager.LoadScene("Level3");
+                    //if theres not a skeleton boss then portal becomes active
+                    if (GameObject.Find("SkellyBoss") == null)
+                    {
+                        // load level 3 if youre in level 2 when you press it
+                        SceneManager.LoadScene("Level3");
+                    }
                 }
             }
         }
